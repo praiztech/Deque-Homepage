@@ -2,11 +2,6 @@
 
 /* MAIN */
 
-.img-wrap {
-    float: left;
-    width: 30%;
-}
-
 .img-wrap img {
     max-width: 97.5%;
     height: auto;
@@ -41,7 +36,7 @@ aside p {
     
     .img-wrap {
         float: left;
-        width: 17.5%;
+        width: 30%;
     }
 }
 
@@ -49,7 +44,7 @@ aside p {
     
     .img-wrap {
         float: left;
-        width: 12%;
+        width: 25%;
     }
 }
 
@@ -57,7 +52,7 @@ aside p {
     
     .img-wrap {
         float: left;
-        width: 7%;
+        width: 18%;
     }
     
     aside {
