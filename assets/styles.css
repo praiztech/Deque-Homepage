@@ -1,0 +1,148 @@
+/* FONT */
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/roboto.regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* RESET */
+*, *::before, *::after {
+  box-sizing: border-box;
+  background: transparent;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button, a, input {
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+[data-visually-hidden] {
+  position: absolute;
+  width: 1px;
+  height: auto;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+:root {
+  font-size: 62.5%; /* reset 4 easier sizing w/out impacting text resize */
+  --base-font: 'Roboto';
+  --base-font-size: 1.8rem;
+  --base-spacing: 1.2rem;
+}
+
+body {
+  background-color: hsl(0 0% 99%);
+  color: hsl(0 0% 11%);
+  font: var(--base-font-size)/1.5 var(--base-font, sans-serif);
+}
+
+.banner {
+  color: hsl(0 0% 100%);
+  position: relative;
+}
+
+[data-skip] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: hsl(198 92% 10%);
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50rem);
+  transition: transform 0.55s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-skip]:focus {
+  transform: translateY(0);
+  text-decoration: underline;
+}
+
+header {
+  background-color: hsl(198 100% 14%);
+  padding: 0 calc(var(--base-spacing) * 1.25);
+  display: flex;
+}
+
+/* Logo */
+.logo-wrapper {
+  --logo-width: 5.4rem;
+  --logo-height: 4.8rem;
+  height: calc(var(--logo-height) + calc(var(--base-spacing) * 0.25));
+  border-right: 0.1rem solid hsl(0 0% 53% / 50%);
+}
+.logo {
+  width: var(--logo-width);
+  height: var(--logo-height);
+}
+
+.logo:hover, .logo:focus-within {
+  border-bottom: 0.5rem solid hsl(0 0% 100% / 80%);
+}
+
+.logo a {
+  padding: calc(var(--base-spacing) * 0.75) calc(var(--base-spacing) * 1.25) calc(var(--base-spacing) * 0.5);
+  cursor: pointer;
+}
+
+.logo a, .logo picture {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Search Widget */
+.search-widget {
+  flex: 1 1 auto;
+  max-width: 23.3rem;
+  padding: calc(var(--base-spacing) * 0.5) 0 calc(var(--base-spacing) * 0.5) calc(var(--base-spacing) * 1.25);
+}
+
+.search-widget form {
+  border: 0.1rem solid hsl(0 0% 53%);
+  border-radius: 0.2rem;
+  display: flex;
+}
+
+.search-widget button {
+  width: 3.5rem;
+  height: 4rem;
+}
+
+.search-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
