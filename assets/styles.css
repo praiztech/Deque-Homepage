@@ -137,12 +137,27 @@ header {
 }
 
 .search-widget button {
-  width: 3.5rem;
-  height: 4rem;
+  width: 3.7rem;
+  height: 3.7rem;
+  padding: calc(var(--base-spacing) * 0.5);
+}
+
+.search-widget svg {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
 
 .search-box {
+  flex: 1 1 auto;
+  position: relative;
+}
+
+.search-box input {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  position: relative;
+  z-index: 2;
 }
