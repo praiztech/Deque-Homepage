@@ -150,7 +150,13 @@ header {
 
 .search-box {
   flex: 1 1 auto;
+  padding: calc(var(--base-spacing) * 0.4) calc(var(--base-spacing) * 0.5);
+}
+
+.input-wrapper {
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .search-box input {
