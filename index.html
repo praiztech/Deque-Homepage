@@ -5,13 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deque Homepage Clone</title>
+  <meta name="author" content="Praise Agbabiaka">
+  <meta name="description" content="A modern implementation of Deque's website homepage using HTML, CSS, and vanilla JavaScript.">
+  <link rel="preload" href="/assets/fonts/roboto.regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/styles.css">
+  <script type="module" src="/assets/script.js"></script>
 </head>
 <body>
-  <div class="banner">
+  <header>
     <a href="#main" data-skip>Skip to Content</a>
-    <header>
-      <div class="logo-wrapper">
+    <div class="banner">
+      <div class="logo-container">
         <div class="logo">
           <a href="#">
             <picture>
@@ -24,39 +28,38 @@
       </div>
       <div class="search-widget">
         <form role="search" action="#">
-          <div class="search-box">
-            <div class="input-wrapper">
-              <label for="q" id="form-label">Search</label>
-              <input type="text" name="q" id="q">
+          <div class="search-box-container">
+            <div class="search-box">
+              <input id="search-input" type="text" name="searchInput" value="">
+              <label for="search-input" id="search-label">Search</label>
             </div>
           </div>
-          <button type="submit" aria-labelledby="form-label">
+          <button type="submit" aria-labelledby="search-label" class="ctrl">
             <svg viewBox="0 0 52 52" aria-hidden="true">
               <use href="/assets/images/icons.svg#searchIcon"/>
             </svg>
           </button>
         </form>
       </div>
-    </header>
-  </div>
-  <div id="content">
+    </div>
     <nav aria-label="Main">
-      <button type="button" aria-expanded="false" aria-controls="nav-list">
-        <svg viewBox="0 0 30 24" aria-hidden="true">
+      <button type="button" aria-expanded="false" aria-controls="nav-list" class="hamburger-btn">
+        <svg viewBox="0 0 28 24" width="21" height="18" aria-hidden="true">
           <use href="/assets/images/icons.svg#menuIcon"/>
         </svg>
         <span>Menu</span>
       </button>
-      <ul id="nav-list">
+      <ul id="nav-list" hidden>
         <li>
-          <a href="#" id="top-link1">axe Tools</a>
-          <label id="btn-label" hidden>subMenu</label>
-          <button type="button" aria-expanded="false" aria-controls="tools-list" aria-labelledby="top-link1 btn-label">
-            <svg viewBox="0 0 80 80" aria-hidden="true">
-              <use href="/assets/images/icons.svg#submenuIcon"/>
-            </svg>
-          </button>
-          <ul id="tools-list">
+          <div class="top-links">
+            <a href="#">axe Tools</a>
+            <button type="button" aria-expanded="false" aria-controls="tools-list" aria-label="More axe Tools Pages">
+              <svg viewBox="0 0 80 80" aria-hidden="true">
+                <use href="/assets/images/icons.svg#showIcon"/>
+              </svg>
+            </button>
+          </div>
+          <ul id="tools-list" hidden>
             <li><a href="#">axe DevTools</a></li>
             <li><a href="#">axe Auditor</a></li>
             <li><a href="#">axe Monitor</a></li>
@@ -67,12 +70,14 @@
           </ul>
         </li>
         <li>
-          <a href="#" id="top-link2">Solutions</a>
-          <button type="button" aria-expanded="false" aria-controls="tools-list" aria-labelledby="top-link2 btn-label">
-            <svg viewBox="0 0 80 80" aria-hidden="true">
-              <use href="/assets/images/icons.svg#submenuIcon"/>
-            </svg>
-          </button>
+          <div class="top-links">
+            <a href="#">Solutions</a>
+            <button type="button" aria-expanded="false" aria-controls="solutions-list" aria-label="More Solutions Pages">
+              <svg viewBox="0 0 80 80" aria-hidden="true">
+                <use href="/assets/images/icons.svg#showIcon"/>
+              </svg>
+            </button>
+          </div>
           <ul id="solutions-list" hidden>
             <li><a href="#">Accessibility Audits & Compliance Testing</a></li>
             <li><a href="#">VPAT</a></li>
@@ -82,12 +87,14 @@
           </ul>
         </li>
         <li>
-          <a href="#" id="top-link3">News & Resources</a>
-          <button type="button" aria-expanded="false" aria-controls="tools-list" aria-labelledby="top-link3 btn-label">
-            <svg viewBox="0 0 80 80" aria-hidden="true">
-              <use href="/assets/images/icons.svg#submenuIcon"/>
-            </svg>
-          </button>
+          <div class="top-links">
+            <a href="#">News & Resources</a>
+            <button type="button" aria-expanded="false" aria-controls="news-list" aria-label="More News & Resources Pages">
+              <svg viewBox="0 0 80 80" aria-hidden="true">
+                <use href="/assets/images/icons.svg#showIcon"/>
+              </svg>
+            </button>
+          </div>
           <ul id="news-list" hidden>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Accessibility in Design</a></li>
@@ -96,12 +103,14 @@
           </ul>
         </li>
         <li>
-          <a href="#" id="top-link4">Compliance</a>
-          <button type="button" aria-expanded="false" aria-controls="tools-list" aria-labelledby="top-link4 btn-label">
-            <svg viewBox="0 0 80 80" aria-hidden="true">
-              <use href="/assets/images/icons.svg#submenuIcon"/>
-            </svg>
-          </button>
+          <div class="top-links">
+            <a href="#">Compliance</a>
+            <button type="button" aria-expanded="false" aria-controls="compliance-list" aria-label="More Compliance Pages">
+              <svg viewBox="0 0 80 80" aria-hidden="true">
+                <use href="/assets/images/icons.svg#showIcon"/>
+              </svg>
+            </button>
+          </div>
           <ul id="compliance-list" hidden>
             <li><a href="#">ADA</a></li>
             <li><a href="#">WCAG</a></li>
@@ -110,12 +119,14 @@
           </ul>
         </li>
         <li>
-          <a href="#" id="top-link5">Company</a>
-          <button type="button" aria-expanded="false" aria-controls="tools-list" aria-labelledby="top-link5 btn-label">
-            <svg viewBox="0 0 80 80" aria-hidden="true">
-              <use href="/assets/images/icons.svg#submenuIcon"/>
-            </svg>
-          </button>
+          <div class="top-links">
+            <a href="#">Company</a>
+            <button type="button" aria-expanded="false" aria-controls="company-list" aria-label="More Company Pages">
+              <svg viewBox="0 0 80 80" aria-hidden="true">
+                <use href="/assets/images/icons.svg#showIcon"/>
+              </svg>
+            </button>
+          </div>
           <ul id="company-list" hidden>
             <li><a href="#">Our Customers</a></li>
             <li><a href="#">Partners</a></li>
@@ -124,249 +135,251 @@
         </li>
       </ul>
     </nav>
-    <main>
-      <div class="hero">
-        <div class="hero-txt">
-          <h1 id="main" tabindex="-1">We Make Digital Experiences Accessible to Everyone</h1>
+  </header>
+  <main>
+    <div class="hero">
+      <div class="hero-txt">
+        <div class="intro">
+          <h1 id="main" tabindex="-1">We make digital experiences accessible to everyone</h1>
           <p>Take the ambiguity out of web & mobile accessibility testing and compliance with tools, training and services from Deque.</p>
-          <a href="#">Request a Demo</a>
-          <a href="#">Request Free Consultation</a>
-          <div class="dev-hub">
-            <div class="hub-img">
-              <svg aria-hidden="true"></svg>
-            </div>
-            <p class="dev-hub">Sign up for the axe Developer Hub (Beta).</p>
-            <p>Track your progress with each new release. <a href="#">Get priority access</a>.</p>
-          </div>
+          <a href="#" class="ctrl">Request a Demo</a>
+          <a href="#" class="ctrl">Free Consultation</a>
         </div>
-        <div class="hero-img">
-          <img src="" alt="">
+        <div class="dev-hub">
+          <div class="hub-img"><img src="/assets/images/dev-hub.svg" alt=""></div>
+          <p>Sign up for the axe Developer Hub (Beta).</p>
+          <p>Track your progress with each new release. <a href="#">Get priority access</a>.</p>
         </div>
       </div>
-      <div class="sub-sect1">
-        <h2>Why Customers Choose Deque</h2>
-        <div class="card">
-          <div class="card-img"></div>
-          <h3>We’re your Partner</h3>
-          <p>Let’s meet you where you are and build a pragmatic plan for advancement together.</p>
-        </div>
-        <div class="card">
-          <div class="card-img"></div>
-          <h3>We’re Trusted</h3>
-          <p>Deque’s tactical and strategic accessibility expertise is unparalleled.</p>
-        </div>
-        <div class="card">
-          <div class="card-img"></div>
-          <h3>We’ve Got the Tools</h3>
-          <p>Axe is the most trusted and accurate accessibility testing toolkit on the planet.</p>
-        </div>
-        <div class="card">
-          <div class="card-img"></div>
-          <h3>We’re Focused on Sustainability</h3>
-          <p>Deque’s emphasis on shift-left accessibility is unique and critical for success.</p>
-        </div>
+      <div class="hero-img">
+        <img src="" alt="">
       </div>
-      <div class="sub-sect2">
-        <h2>Avoid Common Pitfalls</h2>
-        <div class="panel1">
-          <h3>
-            <button type="button" aria-expanded="false" aria-controls="panel1-txt">
-              <span>Achieving Compliance Adds Complexity and Disrupts your Business</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <use href="/assets/images/icons.svg#accordionIcon"/>
-              </svg>
-            </button>
-          </h3>
-          <p id="panel1-txt" hidden>
-            Follow our proven approach and deliver inclusive digital experiences that don’t impact streamlined operations.
+    </div>
+    <div class="sub-sect1">
+      <h2>Why Customers Choose Deque</h2>
+      <div class="card">
+        <div class="card-img"></div>
+        <h3>We’re your Partner</h3>
+        <p>Let’s meet you where you are and build a pragmatic plan for advancement together.</p>
+      </div>
+      <div class="card">
+        <div class="card-img"></div>
+        <h3>We’re Trusted</h3>
+        <p>Deque’s tactical and strategic accessibility expertise is unparalleled.</p>
+      </div>
+      <div class="card">
+        <div class="card-img"></div>
+        <h3>We’ve Got the Tools</h3>
+        <p>Axe is the most trusted and accurate accessibility testing toolkit on the planet.</p>
+      </div>
+      <div class="card">
+        <div class="card-img"></div>
+        <h3>We’re Focused on Sustainability</h3>
+        <p>Deque’s emphasis on shift-left accessibility is unique and critical for success.</p>
+      </div>
+    </div>
+    <div class="sub-sect2">
+      <h2>Avoid Common Pitfalls</h2>
+      <div class="panel1">
+        <h3>
+          <button type="button" aria-expanded="false" aria-controls="panel1-txt">
+            <span>Achieving Compliance Adds Complexity and Disrupts your Business</span>
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <use href="/assets/images/icons.svg#showIcon"/>
+            </svg>
+          </button>
+        </h3>
+        <p id="panel1-txt" hidden>
+          Follow our proven approach and deliver inclusive digital experiences that don’t impact streamlined operations.
+        </p>
+      </div>
+      <div class="panel2">
+        <h3>
+          <button type="button" aria-expanded="false" aria-controls="panel2-txt">
+            <span>Uncertainty and False Starts Lead to Inaction and Legal Risk</span>
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <use href="/assets/images/icons.svg#showIcon"/>
+            </svg>
+          </button>
+        </h3>
+        <p id="panel2-txt" hidden>
+          With Deque’s tools and processes, developing and maintaining accessible experiences doesn’t have to be complicated.
+        </p>
+      </div>
+      <div class="panel3">
+        <h3>
+          <button type="button" aria-expanded="false" aria-controls="panel3-txt">
+            <span>Reactive and Strictly Manual Accessibility Testing is Slow and Costly</span>
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <use href="/assets/images/icons.svg#showIcon"/>
+            </svg>
+          </button>
+        </h3>
+        <p id="panel3-txt" hidden>
+          We automate more accessibility testing than any company on the planet because this is the only way to make it efficient and sustainable.
+        </p>
+      </div>
+      <div class="panel4">
+        <h3>
+          <button type="button" aria-expanded="false" aria-controls="panel4-txt">
+            <span>Vendors who Promise Magic Auto-fixing Solutions Burden your Customers</span>
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <use href="/assets/images/icons.svg#showIcon"/>
+            </svg>
+          </button>
+        </h3>
+        <p id="panel4-txt" hidden>
+          Give your customers direct access to your digital experiences by design instead of through a third-party widget.
+        </p>
+      </div>
+    </div>
+    <div class="sub-sect3">
+      <h2>Deque is the Leader in Accessibility Tools, Services and Training</h2>
+      <p>Our experts help define web standards, and with over 475,000 deployments worldwide, our tools are the de facto standard for automated accessibility testing.</p>
+      <figure aria-label="Testimonial">
+        <blockquote>
+          <p>What I like most about working with Deque is their collaboration, professionalism, and perhaps most importantly, their patience throughout every engagement. This is what keeps me coming back.</p>
+        </blockquote>
+        <img src="" alt="">
+        <figcaption>— Ian Lyons, Software Engineer, Blend Labs</figcaption>
+      </figure>
+    </div>
+    <div class="sub-sect4">
+      <h2>Our Customers</h2>
+      <ul role="list">
+        <li><a href="#"><img src="" alt="Clever"></a></li>
+        <li><a href="#"><img src="" alt="Articulate"></a></li>
+        <li><a href="#"><img src="" alt="Macerich"></a></li>
+        <li><a href="#"><img src="" alt="Puritan Life Insurance"></a></li>
+        <li><a href="#"><img src="" alt="Freshworks"></a></li>
+        <li><a href="#"><img src="" alt="UserTesting"></a></li>
+      </ul>
+      <a href="#">View More Customers</a>
+    </div>
+    <div class="sub-sect5">
+      <h2>Don't Wait. Get Started Now...</h2>
+      <div class="card">
+        <div class="card-img"></div>
+        <h3>Get Quick Wins</h3>
+        <p>Using <a href="#">axe</a> or an <a href="#">audit</a>, act fast to detect common accessibility issues.</p>
+      </div>
+      <div class="card">
+        <div class="card-img"></div>
+        <h3>Build on your Foundation</h3>
+        <p>With some coaching, new processes and tools, your team will become self-sufficient.</p>
+      </div>
+      <div class="card">
+        <div class="card-img"></div>
+        <h3>Stay Inclusive</h3>
+        <p>Transform your business into an inclusive brand, with accessibility by design.</p>
+      </div>
+      <a href="#">Book a Free Consultation</a>
+    </div>
+    <div class="sub-sect6">
+      <h2>Tools, Services and Training that Simplify Accessibility Compliance</h2>
+      <p>Don’t put your trust in unreliable accessibility tools and processes that create inaccessible experiences and generate ongoing legal and development costs for your business.</p> 
+      <p> Our <a href="#">training</a>, <a href="#">tools</a> and <a href="#">programs</a> take the uncertainty out of web accessibility compliance. We provide you with the knowledge and experience you need to simplify your development processes and deliver accessibility by default throughout your organization.</p>
+      <div class="tools-img"></div>
+    </div>
+    <div class="sub-sect7">
+      <h2>Accessibility Leadership You Can Trust</h2>
+      <ul role="list" aria-label="Stats">
+        <li>
+          <div class="stats-img"></div>
+          <p role="text" class="stats-txt">
+            <span data-lead>8 <span aria-hidden="true">/</span><span data-visually-hidden>of </span>10 </span>
+            <span data-trail>Top US Banks</span>
           </p>
-        </div>
-        <div class="panel2">
-          <h3>
-            <button type="button" aria-expanded="false" aria-controls="panel2-txt">
-              <span>Uncertainty and False Starts Lead to Inaction and Legal Risk</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <use href="/assets/images/icons.svg#accordionIcon"/>
-              </svg>
-            </button>
-          </h3>
-          <p id="panel2-txt" hidden>
-            With Deque’s tools and processes, developing and maintaining accessible experiences doesn’t have to be complicated.
+        </li>
+        <li>
+          <div class="stats-img"></div>
+          <p role="text" class="stats-txt">
+            <span data-lead>750,000,000+ </span>
+            <span data-trail>Downloads</span>
           </p>
-        </div>
-        <div class="panel3">
-          <h3>
-            <button type="button" aria-expanded="false" aria-controls="panel3-txt">
-              <span>Reactive and Strictly Manual Accessibility Testing is Slow and Costly</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <use href="/assets/images/icons.svg#accordionIcon"/>
-              </svg>
-            </button>
-          </h3>
-          <p id="panel3-txt" hidden>
-            We automate more accessibility testing than any company on the planet because this is the only way to make it efficient and sustainable.
+        </li>
+        <li>
+          <div class="stats-img"></div>
+          <p role="text" class="stats-txt">
+            <span data-lead>475,000+ </span>
+            <span data-trail>Installed Extensions</span>
           </p>
-        </div>
-        <div class="panel4">
-          <h3>
-            <button type="button" aria-expanded="false" aria-controls="panel4-txt">
-              <span>Vendors who Promise Magic Auto-fixing Solutions Burden your Customers</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <use href="/assets/images/icons.svg#accordionIcon"/>
-              </svg>
-            </button>
-          </h3>
-          <p id="panel4-txt" hidden>
-            Give your customers direct access to your digital experiences by design instead of through a third-party widget.
+        </li>
+        <li>
+          <div class="stats-img"></div>
+          <p role="text" class="stats-txt">
+            <span data-lead>5,000+ </span>
+            <span data-trail>Completed Audit Projects</span>
           </p>
-        </div>
+        </li>
+      </ul>
+      <a href="#">Learn More About Deque</a>
+    </div>
+    <div class="sub-sect8">
+      <h2>Accessibility Solutions for your Environment of Choice</h2>
+      <ul role="list">
+        <li><img src="" alt="Mocha"></li>
+        <li><img src="" alt="Selenium"></li>
+        <li><img src="" alt="Karma"></li>
+        <li><img src="" alt="Cucumber"></li>
+        <li><img src="" alt="Jasmine"></li>
+        <li><img src="" alt="SauceLabs"></li>
+        <li><img src="" alt="Rspec"></li>
+        <li><img src="" alt="Maven"></li>
+        <li><img src="" alt="Jenkins"></li>
+      </ul>
+      <a href="#">Learn How Deque Supports these Environments</a>
+    </div>
+    <div class="sub-sect9">
+      <h2>Accessibility News & Resources</h2>
+      <div class="card">
+        <h3>
+          <span>Free Testing Tool </span>
+          <span>Axe DevTools Browser Extension</span>
+        </h3>
+        <p>Automatically catch accessibility issues with the click of a button. Start a free trial to export, save and share those issues with the rest of your team.</p>
+        <a href="#">Start Free Trial</a>
       </div>
-      <div class="sub-sect3">
-        <h2>Deque is the Leader in Accessibility Tools, Services and Training</h2>
-        <p>Our experts help define web standards, and with over 475,000 deployments worldwide, our tools are the de facto standard for automated accessibility testing.</p>
-        <figure aria-label="Testimonial">
-          <blockquote>
-            <p>What I like most about working with Deque is their collaboration, professionalism, and perhaps most importantly, their patience throughout every engagement. This is what keeps me coming back.</p>
-          </blockquote>
-          <img src="" alt="">
-          <figcaption>— Ian Lyons, Software Engineer, Blend Labs</figcaption>
-        </figure>
+      <div class="card">
+        <h3>
+          <span>Event </span>
+          <span>Axe-con 2023 Is Complete</span>
+        </h3>
+        <p>The world's largest digital accessibility conference is available on-demand.</p>
+        <a href="#">Register to Watch Axe-con 2023</a>
       </div>
-      <div class="sub-sect4">
-        <h2>Our Customers</h2>
-        <ul role="list">
-          <li><a href="#"><img src="" alt="Clever"></a></li>
-          <li><a href="#"><img src="" alt="Articulate"></a></li>
-          <li><a href="#"><img src="" alt="Macerich"></a></li>
-          <li><a href="#"><img src="" alt="Puritan Life Insurance"></a></li>
-          <li><a href="#"><img src="" alt="Freshworks"></a></li>
-          <li><a href="#"><img src="" alt="UserTesting"></a></li>
-        </ul>
-        <a href="#">View More Customers</a>
+      <div class="card">
+        <h3>
+          <span>Blog post </span>
+          <span>Deque furthers Digital Accessibility through Machine Learning</span>
+        </h3>
+        <p>Learn how Deque uses automation and machine learning to detect accessibility issues.</p>
+        <a href="#">Learn How Deque Uses Machine Learning</a>
       </div>
-      <div class="sub-sect5">
-        <h2>Don't Wait. Get Started Now...</h2>
-        <div class="card">
-          <div class="card-img"></div>
-          <h3>Get Quick Wins</h3>
-          <p>Using <a href="#">axe</a> or an <a href="#">audit</a>, act fast to detect common accessibility issues.</p>
-        </div>
-        <div class="card">
-          <div class="card-img"></div>
-          <h3>Build on your Foundation</h3>
-          <p>With some coaching, new processes and tools, your team will become self-sufficient.</p>
-        </div>
-        <div class="card">
-          <div class="card-img"></div>
-          <h3>Stay Inclusive</h3>
-          <p>Transform your business into an inclusive brand, with accessibility by design.</p>
-        </div>
-        <a href="#">Book a Free Consultation</a>
+      <div class="card">
+        <h3>
+          <span>News </span>
+          <span>Deque Adds Linter to axe DevTools</span>
+        </h3>
+        <p>Dev teams can leverage a new linter service that makes automated accessibility testing even easier.</p>
+        <a href="#">Read More About Deque’s Linter</a>
       </div>
-      <div class="sub-sect6">
-        <h2>Tools, Services and Training that Simplify Accessibility Compliance</h2>
-        <p>Don’t put your trust in unreliable accessibility tools and processes that create inaccessible experiences and generate ongoing legal and development costs for your business.</p> 
-        <p> Our <a href="#">training</a>, <a href="#">tools</a> and <a href="#">programs</a> take the uncertainty out of web accessibility compliance. We provide you with the knowledge and experience you need to simplify your development processes and deliver accessibility by default throughout your organization.</p>
-        <div class="tools-img"></div>
+      <div class="card">
+        <h3>
+          <span>Infographic </span>
+          <span>Essential Guide to Digital Accessibility</span>
+        </h3>
+        <p>Understand the basics of web accessibility with this handy collection of stats and definitions.</p>
+        <a href="#">Download Infographic</a>
       </div>
-      <div class="sub-sect7">
-        <h2>Accessibility Leadership You Can Trust</h2>
-        <ul role="list" aria-label="Stats">
-          <li>
-            <div class="stats-img"></div>
-            <p role="text" class="stats-txt">
-              <span data-lead>8 <span aria-hidden="true">/</span><span data-visually-hidden>of </span>10 </span>
-              <span data-trail>Top US Banks</span>
-            </p>
-          </li>
-          <li>
-            <div class="stats-img"></div>
-            <p role="text" class="stats-txt">
-              <span data-lead>750,000,000+ </span>
-              <span data-trail>Downloads</span>
-            </p>
-          </li>
-          <li>
-            <div class="stats-img"></div>
-            <p role="text" class="stats-txt">
-              <span data-lead>475,000+ </span>
-              <span data-trail>Installed Extensions</span>
-            </p>
-          </li>
-          <li>
-            <div class="stats-img"></div>
-            <p role="text" class="stats-txt">
-              <span data-lead>5,000+ </span>
-              <span data-trail>Completed Audit Projects</span>
-            </p>
-          </li>
-        </ul>
-        <a href="#">Learn More About Deque</a>
-      </div>
-      <div class="sub-sect8">
-        <h2>Accessibility Solutions for your Environment of Choice</h2>
-        <ul role="list">
-          <li><img src="" alt="Mocha"></li>
-          <li><img src="" alt="Selenium"></li>
-          <li><img src="" alt="Karma"></li>
-          <li><img src="" alt="Cucumber"></li>
-          <li><img src="" alt="Jasmine"></li>
-          <li><img src="" alt="SauceLabs"></li>
-          <li><img src="" alt="Rspec"></li>
-          <li><img src="" alt="Maven"></li>
-          <li><img src="" alt="Jenkins"></li>
-        </ul>
-        <a href="#">Learn How Deque Supports these Environments</a>
-      </div>
-      <div class="sub-sect9">
-        <h2>Accessibility News & Resources</h2>
-        <div class="card">
-          <h3>
-            <span>Free Testing Tool </span>
-            <span>Axe DevTools Browser Extension</span>
-          </h3>
-          <p>Automatically catch accessibility issues with the click of a button. Start a free trial to export, save and share those issues with the rest of your team.</p>
-          <a href="#">Start Free Trial</a>
-        </div>
-        <div class="card">
-          <h3>
-            <span>Event </span>
-            <span>Axe-con 2023 Is Complete</span>
-          </h3>
-          <p>The world's largest digital accessibility conference is available on-demand.</p>
-          <a href="#">Register to Watch Axe-con 2023</a>
-        </div>
-        <div class="card">
-          <h3>
-            <span>Blog post </span>
-            <span>Deque furthers Digital Accessibility through Machine Learning</span>
-          </h3>
-          <p>Learn how Deque uses automation and machine learning to detect accessibility issues.</p>
-          <a href="#">Learn How Deque Uses Machine Learning</a>
-        </div>
-        <div class="card">
-          <h3>
-            <span>News </span>
-            <span>Deque Adds Linter to axe DevTools</span>
-          </h3>
-          <p>Dev teams can leverage a new linter service that makes automated accessibility testing even easier.</p>
-          <a href="#">Read More About Deque’s Linter</a>
-        </div>
-        <div class="card">
-          <h3>
-            <span>Infographic </span>
-            <span>Essential Guide to Digital Accessibility</span>
-          </h3>
-          <p>Understand the basics of web accessibility with this handy collection of stats and definitions.</p>
-          <a href="#">Download Infographic</a>
-        </div>
-      </div>
-      <div class="sub-sect10">
-        <h2>Need Accessibility Help?</h2>
-        <p>Deque is your accessibility company of choice.</p>
-        <address>Call <a href="tel:+17032250380">703-225-0380</a> or <a href="#">Email Us</a>. Customers can also contact our <a href="#">support helpdesk</a>.</address>
-      </div>
-    </main>
+    </div>
+    <div class="sub-sect10">
+      <h2>Need Accessibility Help?</h2>
+      <p>Deque is your accessibility company of choice.</p>
+      <address>Call <a href="tel:+17032250380">703-225-0380</a> or <a href="#">Email Us</a>. Customers can also contact our <a href="#">support helpdesk</a>.</address>
+    </div>
+  </main>
+  <footer>
     <nav aria-label="Secondary">
       <ul>
         <li>
@@ -436,25 +449,23 @@
         </li>
       </ul>
     </nav>
-    <footer>
-      <div class="info">
-        <address>381 Elden Street Ste 2000 Herndon, Virginia 20170 <a href="tel:+17032250380">1-703-225-0380</a></address>
-        <nav aria-label="Site">
-          <ul>
-            <li><a href="#">Legal</a></li>
-            <li><a href="#">Sitemap</a></li>
-            <li><a href="#">Docs</a></li>
-            <li><a href="#">SaaS Service Status</a></li>
-          </ul>
-        </nav>
-        <p><small>&copy; Copyright 2023, Deque Systems, Inc. All Rights Reserved</small></p>
+    <div class="info">
+      <address>381 Elden Street, Ste 2000, Herndon, Virginia 20170 <a href="tel:+17032250380">1-703-225-0380</a></address>
+      <nav aria-label="Site">
         <ul>
-          <li><a href="#" target="_blank"><img src="" alt="Deque on LinkedIn"></a></li>
-          <li><a href="#" target="_blank"><img src="" alt="Deque on Twitter"></a></li>
-          <li><a href="#" target="_blank"><img src="" alt="Deque on GitHub"></a></li>
+          <li><a href="#">Legal</a></li>
+          <li><a href="#">Sitemap</a></li>
+          <li><a href="#">Docs</a></li>
+          <li><a href="#">SaaS Service Status</a></li>
         </ul>
-      </div>
-    </footer>
-  </div>
+      </nav>
+      <p><small>&copy; Copyright 2023, Deque Systems, Inc. All Rights Reserved</small></p>
+      <ul>
+        <li><a href="#" target="_blank"><img src="" alt="Deque on LinkedIn"></a></li>
+        <li><a href="#" target="_blank"><img src="" alt="Deque on Twitter"></a></li>
+        <li><a href="#" target="_blank"><img src="" alt="Deque on GitHub"></a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
