@@ -14,6 +14,6 @@
     </g>
   </symbol>
   <symbol viewBox="0 0 80 80">
-    <path id="showIcon" d="M70.3 13.8L40 66.3 9.7 13.8z" transform="rotate(-90 40 40)" fill="#000" style="fill: var(--icon-color)"/>
+    <path id="showIcon" d="M70.3 13.8L40 66.3 9.7 13.8z" fill="#000" style="fill: var(--icon-color)"/>
   </symbol>
 </svg>
