@@ -11,27 +11,24 @@
 *, *::before, *::after {
   box-sizing: border-box;
   background: transparent;
-  outline: none;
   margin: 0;
   padding: 0;
   border: 0;
+  outline: none;
   font-family: inherit;
   font-size: 100%;
-}
-
-h1 {
-  text-align: center;
 }
 
 ul {
   list-style-type: none;
 }
 
-button, a, input {
+button, a {
   color: inherit;
+  cursor: pointer;
 }
 
-a {
+nav a {
   text-decoration: none;
 }
 
@@ -55,70 +52,110 @@ a {
   font-size: 62.5%; /* reset 4 easier sizing w/out impacting text resize */
   --base-font: 'Roboto';
   --base-font-size: 1.8rem;
-  --base-spacing: 1.2rem;
+  --base-spacing: 1rem;
+  --white: hsl(0 0% 99%);
+  --off-white: hsla(0 0% 100% / 80%);
+  --very-light-gray: hsl(0 0% 86%);
+  --light-gray: hsla(0 0% 53% / 50%);
+  --gray: hsl(0 0% 53%);
+  --very-dark-gray: hsl(0 0% 11%);
+  --black: hsla(0 0% 0% / 7.5%);
+  --light-blue: hsla(206 75% 65% / 60%);
+  --blue: hsl(204 100% 39%);
+  --dark-blue: hsl(198 100% 14%);
+  --very-dark-blue: hsl(198 92% 10%);
+  --green: hsl(99 64% 63%);
 }
 
 body {
-  background-color: hsl(0 0% 99%);
-  color: hsl(0 0% 11%);
-  font: var(--base-font-size)/1.5 var(--base-font, sans-serif);
+  background-color: var(--white);
+  color: var(--very-dark-gray);
+  line-height: 1.5;
+  font-size: var(--base-font-size);
+  font-family: var(--base-font, sans-serif);
 }
 
-.banner {
-  color: hsl(0 0% 100%);
+.ctrl:hover::before, .ctrl:focus::before, .ctrl:hover::after, .ctrl:focus::after {
+  content: "";
+  position: absolute;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  width: 0.4rem;
+  border-top: 0.2rem solid;
+  border-bottom: 0.2rem solid;
+}
+
+.ctrl:hover::before, .ctrl:focus::before {
+  left: 0.2rem;
+  border-radius: 0.2rem 0 0 0.2rem;
+  border-left: 0.2rem solid;
+}
+
+.ctrl:hover::after, .ctrl:focus::after {
+  right: 0.2rem;
+  border-radius: 0 0.2rem 0.2rem 0;
+  border-right: 0.2rem solid;
+}
+
+/* Header */
+header {
+  background-color: var(--blue);
+  color: var(--white);
+  padding-bottom: var(--base-spacing);
   position: relative;
 }
 
+/* Skip Link */
 [data-skip] {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 2;
-  background-color: hsl(198 92% 10%);
+  z-index: 3;
+  background-color: var(--very-dark-blue);
+  padding: calc(var(--base-spacing) * 1.6) 0;
+  text-align: center;
   font-weight: 600;
   line-height: 1;
-  cursor: pointer;
   transform: translateY(-50rem);
-  transition: transform 0.55s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transition: transform 0.25s ease-in-out;
 }
 
 [data-skip]:focus {
   transform: translateY(0);
-  text-decoration: underline;
 }
 
-header {
-  background-color: hsl(198 100% 14%);
-  padding: 0 calc(var(--base-spacing) * 1.25);
+.banner {
+  background-color: var(--dark-blue);
+  padding: 0 calc(var(--base-spacing) * 1.5);
   display: flex;
 }
 
 /* Logo */
-.logo-wrapper {
+.logo-container {
   --logo-width: 5.4rem;
-  --logo-height: 4.8rem;
-  height: calc(var(--logo-height) + calc(var(--base-spacing) * 0.25));
-  border-right: 0.1rem solid hsl(0 0% 53% / 50%);
-}
-.logo {
+  --logo-height: 5rem;
   width: var(--logo-width);
   height: var(--logo-height);
+  border-right: 0.1rem solid var(--light-gray);
 }
 
-.logo:hover, .logo:focus-within {
-  border-bottom: 0.5rem solid hsl(0 0% 100% / 80%);
+.logo {
+  width: 100%;
+  height: calc(100% - 0.3rem); /* 0.3rem diff btw logo container & logo height makes focus style more visible */
+}
+
+.logo:focus-within {
+  border-bottom: 0.5rem solid var(--off-white);
 }
 
 .logo a {
-  padding: calc(var(--base-spacing) * 0.75) calc(var(--base-spacing) * 1.25) calc(var(--base-spacing) * 0.5);
-  cursor: pointer;
+  padding: calc(var(--base-spacing) * 0.8) calc(var(--base-spacing) * 1.5) calc(var(--base-spacing) * 0.5);
+  text-decoration: none;
 }
 
 .logo a, .logo picture {
-  display: inline-block;
+  display: block;
   width: 100%;
   height: 100%;
 }
@@ -127,33 +164,28 @@ header {
 .search-widget {
   flex: 1 1 auto;
   max-width: 23.3rem;
-  padding: calc(var(--base-spacing) * 0.5) 0 calc(var(--base-spacing) * 0.5) calc(var(--base-spacing) * 1.25);
+  padding: calc(var(--base-spacing) * 0.5) 0 calc(var(--base-spacing) * 0.5) calc(var(--base-spacing) * 1.5);
 }
 
 .search-widget form {
-  border: 0.1rem solid hsl(0 0% 53%);
+  border: 0.1rem solid var(--gray);
   border-radius: 0.2rem;
   display: flex;
 }
 
-.search-widget button {
-  width: 3.7rem;
-  height: 3.7rem;
-  padding: calc(var(--base-spacing) * 0.5);
+.search-box-container {
+  flex: 1 1 auto;
+  padding: calc(var(--base-spacing) * 0.6) calc(var(--base-spacing) * 0.5);
 }
 
-.search-widget svg {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
+.search-box-container:focus-within {
+  outline: 0.1rem solid var(--gray);
+  outline-offset: 0.1rem;
+  box-shadow: inset 0 0.1rem 0.1rem var(--black), 0 0 0.8rem var(--light-blue);
+  border-radius: 0.2rem;
 }
 
 .search-box {
-  flex: 1 1 auto;
-  padding: calc(var(--base-spacing) * 0.4) calc(var(--base-spacing) * 0.5);
-}
-
-.input-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
@@ -166,4 +198,161 @@ header {
   width: 100%;
   height: 100%;
   z-index: 2;
+  color: var(--green);
 }
+
+.search-box input:not([value=""]) + label {
+  opacity: 0.0001;
+}
+
+.search-widget button {
+  --submit-btn-width: 4.8rem;
+  --submit-btn-height: 3.8rem;
+  width: var(--submit-btn-width);
+  height: var(--submit-btn-height);
+  padding: calc(var(--base-spacing) * 0.5) var(--base-spacing);
+  outline: revert;
+  outline-offset: -0.2rem;
+  position: relative;
+}
+
+.search-widget button:hover::before, .search-widget button:focus::before, .search-widget button:hover::after, .search-widget button:focus::after {
+  border-color: currentColor;
+}
+
+.search-widget button svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Primary Navigation */
+.hamburger-btn {
+  width: 100%;
+  height: 5rem;
+  outline: revert;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: calc(var(--base-spacing) * 0.4);
+}
+
+.hamburger-btn use {
+  --icon-color: currentColor;
+}
+
+.hamburger-btn[aria-expanded="false"] {
+  border-bottom: 0.1rem solid currentColor;
+}
+
+.hamburger-btn[aria-expanded="true"] {
+  border-bottom: 0.5rem solid var(--very-light-gray);
+}
+
+.hamburger-btn[aria-expanded="true"], .hamburger-btn + ul {
+  background-color: var(--white);
+  color: var(--dark-blue);
+}
+
+.hamburger-btn + ul li {
+  padding: calc(var(--base-spacing) * 0.9) calc(var(--base-spacing) * 1.2);
+}
+
+.hamburger-btn + ul > li {
+  border-bottom: 0.1rem solid var(--very-light-gray);
+}
+
+.top-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-links button {
+  padding: calc(var(--base-spacing) * 0.25) calc(var(--base-spacing) * 0.25) calc(var(--base-spacing) * 0.25) calc(var(--base-spacing) * 0.5);
+  border-radius: 50%;
+  border: 0.2rem solid currentColor;
+}
+
+.top-links svg {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Main */
+h1, h2, h3 {
+  line-height: 1.35;
+}
+
+.hero {
+  padding: calc(var(--base-spacing) * 1.5);
+  background-color: var(--blue);
+  color: var(--white);
+  text-align: center;
+}
+
+.hero-txt {
+  margin-bottom: calc(var(--base-spacing) * 3);
+}
+
+.intro h1 {
+  margin: calc(var(--base-spacing) * 2.5) 0 calc(var(--base-spacing) * 1.2);
+  font-size: calc(var(--base-font-size) * 1.6);
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+.intro p {
+  margin-bottom: calc(var(--base-spacing) * 3);
+  font-size: calc(var(--base-font-size) * 1.1);
+}
+
+.intro a {
+  display: block;
+  margin-bottom: calc(var(--base-spacing) * 1.8);
+  border-radius: 0.2rem;
+  border: 0.3rem solid;
+  padding: var(--base-spacing) calc(var(--base-spacing) * 2.5);
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+}
+
+.intro a:focus {
+  box-shadow: 0.2rem 0.1rem 1rem var(--very-dark-gray);
+}
+
+.intro a:hover::before, .intro a:focus::before, .intro a:hover::after, .intro a:focus::after {
+  border-color: currentColor;
+}
+
+.intro a:first-of-type, .intro a:last-of-type:hover, .intro a:last-of-type:focus {
+  border-color: currentColor;
+  background-color: transparent;
+  color: inherit;
+}
+
+.intro a:last-of-type, .intro a:first-of-type:hover, .intro a:first-of-type:focus {
+  border-color: transparent;
+  background-color: var(--white);
+  color: var(--dark-blue);
+}
+
+.dev-hub {
+  border-top: 0.1rem dashed var(--off-white);
+  padding-top: calc(var(--base-spacing) * 2);
+}
+
+.hub-img {
+  width: 7rem;
+  height: 7rem;
+  margin: 0 auto calc(var(--base-spacing) * 2);
+  background-color: currentColor;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
