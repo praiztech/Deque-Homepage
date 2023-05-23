@@ -268,6 +268,11 @@ header {
   gap: calc(var(--base-spacing) * 0.4);
 }
 
+.hamburger-btn svg {
+  width: 2.1rem;
+  height: 1.8rem;
+}
+
 .hamburger-btn[aria-expanded="false"] {
   border-bottom: 0.1rem solid currentColor;
 }
