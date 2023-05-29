@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deque Homepage Clone</title>
   <meta name="author" content="Praise Agbabiaka">
@@ -34,10 +33,11 @@
           <div class="search-box-container">
             <div class="search-box">
               <input id="search-input" type="text" enterkeyhint="search" name="searchInput" value="">
-              <label for="search-input" id="search-label">Search</label>
+              <label for="search-input">Search</label>
             </div>
           </div>
-          <button type="submit" aria-labelledby="search-label" class="ctrl">
+          <button type="submit" class="ctrl">
+            <span role="none" data-visually-hidden>Go</span>
             <svg viewBox="0 0 123 120" focusable="false" aria-hidden="true">
               <use href="/assets/images/ctrl-icons.svg#searchIcon" class="ctrl-icon"/>
             </svg>
@@ -46,23 +46,22 @@
       </div>
     </div>
     <nav aria-label="Main">
-      <button type="button" aria-expanded="false" aria-controls="nav-list" class="hamburger-btn">
+      <button type="button" aria-expanded="false" aria-controls="main-nav-list" class="hamburger-btn" data-main-nav>
+        <span role="none">Menu</span>
         <svg viewBox="0 0 28 24" focusable="false" aria-hidden="true">
           <use href="/assets/images/ctrl-icons.svg#menuIcon" class="ctrl-icon"/>
         </svg>
-        <span>Menu</span>
       </button>
-      <ul id="nav-list" hidden>
-        <li>
-          <div class="top-links">
-            <a href="#">axe Tools</a>
-            <button type="button" aria-expanded="false" aria-controls="tools-list" aria-label="More axe Tools Pages">
-              <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
-                <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-              </svg>
-            </button>
-          </div>
-          <ul id="tools-list" hidden>
+      <ul id="main-nav-list" hidden>
+        <li class="nav-item">
+          <button type="button" aria-expanded="false" aria-controls="tools-list" class="sub-nav-btn">
+            <span role="none">axe Tools</span>
+            <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
+              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
+            </svg>
+          </button>
+          <ul id="tools-list" class="sub-nav-list" hidden>
+            <li><a href="#">axe Tools Overview</a></li>
             <li><a href="#">axe DevTools</a></li>
             <li><a href="#">axe Auditor</a></li>
             <li><a href="#">axe Monitor</a></li>
@@ -72,16 +71,15 @@
             <li><a href="#">axe Developer Hub (Beta)</a></li>
           </ul>
         </li>
-        <li>
-          <div class="top-links">
-            <a href="#">Solutions</a>
-            <button type="button" aria-expanded="false" aria-controls="solutions-list" aria-label="More Solutions Pages">
-              <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
-                <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-              </svg>
-            </button>
-          </div>
-          <ul id="solutions-list" hidden>
+        <li class="nav-item">
+          <button type="button" aria-expanded="false" aria-controls="solutions-list" class="sub-nav-btn">
+            <span role="none">Solutions</span>
+            <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
+              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
+            </svg>
+          </button>
+          <ul id="solutions-list" class="sub-nav-list" hidden>
+            <li><a href="#">Solutions Overview</a></li>
             <li><a href="#">Accessibility Audits & Compliance Testing</a></li>
             <li><a href="#">VPAT</a></li>
             <li><a href="#">End-to-End Testing</a></li>
@@ -89,48 +87,45 @@
             <li><a href="#">Training</a></li>
           </ul>
         </li>
-        <li>
-          <div class="top-links">
-            <a href="#">News & Resources</a>
-            <button type="button" aria-expanded="false" aria-controls="news-list" aria-label="More News & Resources Pages">
-              <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
-                <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-              </svg>
-            </button>
-          </div>
-          <ul id="news-list" hidden>
+        <li class="nav-item">
+          <button type="button" aria-expanded="false" aria-controls="news-list" class="sub-nav-btn">
+            <span role="none">News & Resources</span>
+            <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
+              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
+            </svg>
+          </button>
+          <ul id="news-list" class="sub-nav-list" hidden>
+            <li><a href="#">News & Resources Overview</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Accessibility in Design</a></li>
             <li><a href="#">Accessibility in Development</a></li>
             <li><a href="#">Webinars</a></li>
           </ul>
         </li>
-        <li>
-          <div class="top-links">
-            <a href="#">Compliance</a>
-            <button type="button" aria-expanded="false" aria-controls="compliance-list" aria-label="More Compliance Pages">
-              <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
-                <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-              </svg>
-            </button>
-          </div>
-          <ul id="compliance-list" hidden>
+        <li class="nav-item">
+          <button type="button" aria-expanded="false" aria-controls="compliance-list" class="sub-nav-btn">
+            <span role="none">Compliance</span>
+            <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
+              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
+            </svg>
+          </button>
+          <ul id="compliance-list" class="sub-nav-list" hidden>
+            <li><a href="#">Compliance Overview</a></li>
             <li><a href="#">ADA</a></li>
             <li><a href="#">WCAG</a></li>
             <li><a href="#">Section 508</a></li>
             <li><a href="#">AODA</a></li>
           </ul>
         </li>
-        <li>
-          <div class="top-links">
-            <a href="#">Company</a>
-            <button type="button" aria-expanded="false" aria-controls="company-list" aria-label="More Company Pages">
-              <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
-                <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-              </svg>
-            </button>
-          </div>
-          <ul id="company-list" hidden>
+        <li class="nav-item">
+          <button type="button" aria-expanded="false" aria-controls="company-list" class="sub-nav-btn">
+            <span role="none">Company</span>
+            <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
+              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
+            </svg>
+          </button>
+          <ul id="company-list" class="sub-nav-list" hidden>
+            <li><a href="#">Company Overview</a></li>
             <li><a href="#">Our Customers</a></li>
             <li><a href="#">Partners</a></li>
             <li><a href="#">Our Team</a></li>
@@ -160,7 +155,7 @@
               <path d="M-1577.175-454.083a2.111,2.111,0,0,1-2.026-2.182V-492.62a2.11,2.11,0,0,1,2.026-2.182H-1538a2.11,2.11,0,0,1,2.026,2.182v36.355a2.111,2.111,0,0,1-2.026,2.182Zm-.676-2.182a.7.7,0,0,0,.676.727H-1538a.7.7,0,0,0,.675-.727V-492.62a.7.7,0,0,0-.675-.727h-8.1a.7.7,0,0,0-.676.727v.909a2.11,2.11,0,0,1-2.026,2.181h-29.041Zm0-36.355v1.636h29.041a.7.7,0,0,0,.675-.727v-.909a2.283,2.283,0,0,1,.125-.727h-29.165A.7.7,0,0,0-1577.85-492.62Zm13.9,35.819h-11.25a1,1,0,0,1-1-1v-9a1,1,0,0,1,1-1h35a1,1,0,0,1,1,1v9a1,1,0,0,1-1,1Zm0-1.5h23.251v-8h-23.251Zm-10.75,0h9.25v-8h-9.25Zm12.5-1.25a.75.75,0,0,1-.75-.75.75.75,0,0,1,.75-.75h4a.75.75,0,0,1,.751.75.75.75,0,0,1-.751.75Zm-7.836-.552a1.184,1.184,0,0,1-.472-1.03l.006-.017.961-.049a.7.7,0,0,0,.187.518.671.671,0,0,0,.492.186.575.575,0,0,0,.515-.248,1.141,1.141,0,0,0,.166-.647,1.206,1.206,0,0,0-.177-.69.6.6,0,0,0-.527-.26.759.759,0,0,0-.439.106.57.57,0,0,0-.217.287l-.878-.059.287-2.772h2.775v.8h-1.958l-.137,1.148a1.185,1.185,0,0,1,.332-.169,1.407,1.407,0,0,1,.43-.07,1.38,1.38,0,0,1,1.112.434,1.8,1.8,0,0,1,.4,1.237,1.707,1.707,0,0,1-.432,1.193,1.6,1.6,0,0,1-1.247.474A1.876,1.876,0,0,1-1570.037-460.1Zm-2.568.3V-463.9h-1.012v-.7l2.01-.178v4.977Zm10.4-1.75a.75.75,0,0,1-.75-.75.75.75,0,0,1,.75-.75h7a.75.75,0,0,1,.75.75.75.75,0,0,1-.75.75Zm0-2a.75.75,0,0,1-.75-.75.75.75,0,0,1,.75-.751h4a.75.75,0,0,1,.751.751.75.75,0,0,1-.751.75Zm-1.75-5.251h-11.25a1,1,0,0,1-1-1v-9a1,1,0,0,1,1-1h35a1,1,0,0,1,1,1v9a1,1,0,0,1-1,1Zm0-1.5h23.251v-8h-23.251Zm-10.75,0h9.25v-8h-9.25Zm12.5-1.25a.75.75,0,0,1-.75-.75.75.75,0,0,1,.75-.75h4a.75.75,0,0,1,.751.75.75.75,0,0,1-.751.75Zm-7.836-.552a1.184,1.184,0,0,1-.472-1.031l.006-.017.961-.049a.7.7,0,0,0,.187.518.671.671,0,0,0,.492.186.575.575,0,0,0,.515-.248,1.141,1.141,0,0,0,.166-.647,1.206,1.206,0,0,0-.177-.69.6.6,0,0,0-.527-.26.759.759,0,0,0-.439.106.57.57,0,0,0-.217.287l-.878-.059.287-2.772h2.775v.8h-1.958l-.137,1.148a1.186,1.186,0,0,1,.332-.169,1.407,1.407,0,0,1,.43-.07,1.38,1.38,0,0,1,1.112.434,1.8,1.8,0,0,1,.4,1.237,1.707,1.707,0,0,1-.432,1.193,1.6,1.6,0,0,1-1.247.474A1.876,1.876,0,0,1-1570.037-472.1Zm-2.568.3v-4.1h-1.012v-.7l2.01-.178v4.977Zm10.4-1.751a.75.75,0,0,1-.75-.75.75.75,0,0,1,.75-.75h7a.75.75,0,0,1,.75.75.75.75,0,0,1-.75.75Zm0-2a.75.75,0,0,1-.75-.75.75.75,0,0,1,.75-.751h4a.75.75,0,0,1,.751.751.75.75,0,0,1-.751.75Zm-13-5.25a1,1,0,0,1-1-1v-3a1,1,0,0,1,1-1h35a1,1,0,0,1,1,1v3a1,1,0,0,1-1,1Zm.5-1.5h34v-2h-34Zm5.228-4.25c-.265,0-.478-.336-.478-.751s.213-.75.478-.75h2.548c.264,0,.477.336.477.75s-.213.751-.477.751Zm-5.978,0a.75.75,0,0,1-.751-.751.75.75,0,0,1,.751-.75h4a.75.75,0,0,1,.75.75.75.75,0,0,1-.75.751Zm35.617-4.393a.71.71,0,0,1-.2-.48.693.693,0,0,1,.2-.48.708.708,0,0,1,.958,0,.706.706,0,0,1,.2.48.71.71,0,0,1-.2.48.711.711,0,0,1-.479.2A.71.71,0,0,1-1539.834-490.945Zm-2.7,0a.7.7,0,0,1-.2-.48.693.693,0,0,1,.2-.48.709.709,0,0,1,.959,0,.71.71,0,0,1,.2.48.714.714,0,0,1-.2.48.711.711,0,0,1-.48.2A.71.71,0,0,1-1542.536-490.945Zm-2.7,0a.71.71,0,0,1-.2-.48.706.706,0,0,1,.2-.48.709.709,0,0,1,.959,0,.71.71,0,0,1,.2.48.713.713,0,0,1-.2.48.713.713,0,0,1-.48.2A.673.673,0,0,1-1545.237-490.945Z" transform="translate(1579.201 494.801)" fill="url(#gradient)"/>
             </svg>
           </div>
-          <p>Stop accessibility bugs with GitHub actions. <a href="#">Get priority access</a>.</p>
+          <p>Stop accessibility bugs with GitHub actions. <a href="#">Get priority access</a></p>
         </div>
       </div>
       <div class="hero-img">
@@ -219,9 +214,11 @@
             </svg>
           </button>
         </h3>
-        <p id="panel1" hidden>
-          Follow our proven approach and deliver inclusive digital experiences that don’t impact streamlined operations.
-        </p>
+        <div id="panel1" hidden>
+          <p>
+            Follow our proven approach and deliver inclusive digital experiences that don’t impact streamlined operations.
+          </p>
+        </div>
       </div>
       <div class="accordion">
         <h3>
@@ -232,9 +229,11 @@
             </svg>
           </button>
         </h3>
-        <p id="panel2" hidden>
-          With Deque’s tools and processes, developing and maintaining accessible experiences doesn’t have to be complicated.
-        </p>
+        <div id="panel2" hidden>
+          <p>
+            With Deque’s tools and processes, developing and maintaining accessible experiences doesn’t have to be complicated.
+          </p>
+        </div>
       </div>
       <div class="accordion">
         <h3>
@@ -245,9 +244,11 @@
             </svg>
           </button>
         </h3>
-        <p id="panel3" hidden>
-          We automate more accessibility testing than any company on the planet because this is the only way to make it efficient and sustainable.
-        </p>
+        <div id="panel3" hidden>
+          <p>
+            We automate more accessibility testing than any company on the planet because this is the only way to make it efficient and sustainable.
+          </p>
+        </div>
       </div>
       <div class="accordion">
         <h3>
@@ -258,9 +259,11 @@
             </svg>
           </button>
         </h3>
-        <p id="panel4" hidden>
-          Give your customers direct access to your digital experiences by design instead of through a third-party widget.
-        </p>
+        <div id="panel4" hidden>
+          <p>
+            Give your customers direct access to your digital experiences by design instead of through a third-party widget.
+          </p>
+        </div>
       </div>
     </div>
     <div class="sub-sect3">

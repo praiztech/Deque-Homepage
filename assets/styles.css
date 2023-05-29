@@ -12,13 +12,14 @@
   --base-font: 'Roboto';
   --base-font-size: 1.8rem;
   --base-spacing: 1rem;
-  --white: hsl(0 0% 99%);
-  --powder-white: hsl(0 0 100%);
-  --off-white: hsla(0 0% 100% / 80%);
-  --very-light-gray: hsl(0 0% 86%);
-  --light-gray: hsla(0 0% 53% / 50%);
+  --white: hsl(0 0 100%);
+  --translucent-white: hsla(0 0% 100% / 80%);
+  --off-white: hsl(0 0% 99%);
+  --very-light-gray: hsl(300 2% 92%);
+  --light-gray: hsl(0 0% 86%);
   --gray: hsl(0 0% 53%);
-  --very-dark-gray: hsl(0 0% 11%);
+  --translucent-gray: hsla(0 0% 53% / 50%);
+  --black: hsl(0 0% 11%);
   --translucent-black: hsla(0 0% 0% / 7.5%);
   --translucent-purple: hsla(240 30% 28% / 10%);
   --light-blue: hsla(206 75% 65% / 60%);
@@ -60,8 +61,8 @@
 }
 
 body {
-  background-color: var(--white);
-  color: var(--very-dark-gray);
+  background-color: var(--off-white);
+  color: var(--black);
   line-height: 1.5;
   font-size: var(--base-font-size);
   font-family: var(--base-font, sans-serif);
@@ -121,7 +122,7 @@ nav a {
 /* Header */
 header {
   background-color: var(--blue);
-  color: var(--white);
+  color: var(--off-white);
   padding-bottom: var(--base-spacing);
   position: relative;
 }
@@ -155,15 +156,14 @@ header {
 /* Logo */
 .logo-container {
   --logo-width: 5.4rem;
-  --logo-height: 5rem;
   width: var(--logo-width);
-  height: var(--logo-height);
-  border-right: 0.1rem solid var(--light-gray);
+  border-right: 0.1rem solid var(--translucent-gray);
 }
 
 .logo {
   width: 100%;
   height: calc(100% - 0.3rem); /* 0.3rem diff btw logo container & logo height makes focus style more visible */
+  padding-top: calc(var(--base-spacing) * 0.5);
   position: relative;
 }
 
@@ -176,19 +176,26 @@ header {
   height: 100%;
 }
 
-.logo:focus-within::after {
-  border-bottom: 0.5rem solid var(--off-white);
+.logo:hover::after, .logo:focus-within::after {
+  border-bottom: 0.5rem solid var(--translucent-white);
 }
 
 .logo a {
-  padding: calc(var(--base-spacing) * 0.8) calc(var(--base-spacing) * 1.5) calc(var(--base-spacing) * 0.5);
-  text-decoration: none;
-}
-
-.logo a, .logo svg {
   display: block;
   width: 100%;
   height: 100%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo svg {
+  --logo-icon-width: 2.3rem;
+  --logo-icon-height: 3.4rem;
+  display: inline-block;
+  width: var(--logo-icon-width);
+  height: var(--logo-icon-height);
 }
 
 .logo .desktop {
@@ -269,6 +276,7 @@ header {
 }
 
 .hamburger-btn svg {
+  order: -1;
   width: 2.1rem;
   height: 1.8rem;
 }
@@ -278,38 +286,54 @@ header {
 }
 
 .hamburger-btn[aria-expanded="true"] {
-  border-bottom: 0.5rem solid var(--very-light-gray);
+  border-bottom: 0.5rem solid var(--light-gray);
 }
 
 .hamburger-btn[aria-expanded="true"], .hamburger-btn + ul {
-  background-color: var(--white);
+  background-color: var(--off-white);
   color: var(--dark-blue);
 }
 
-.hamburger-btn + ul li {
-  padding: calc(var(--base-spacing) * 0.9) calc(var(--base-spacing) * 1.2);
+.nav-item {
+  border-bottom: 0.1rem solid var(--light-gray);
 }
 
-.hamburger-btn + ul > li {
-  border-bottom: 0.1rem solid var(--very-light-gray);
-}
-
-.top-links {
+.sub-nav-btn {
+  width: 100%;
+  padding: calc(var(--base-spacing) * 0.9) calc(var(--base-spacing) * 1.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.top-links button {
-  padding: calc(var(--base-spacing) * 0.5) calc(var(--base-spacing) * 0.5) calc(var(--base-spacing) * 0.25);
-  border-radius: 50%;
-  border: 0.2rem solid transparent;
-}
-
-.top-links svg {
+.sub-nav-btn svg {
   display: block;
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.sub-nav-btn svg use {
+  --rotation-angle: -90deg;
+}
+
+.sub-nav-btn svg.open use {
+  --rotation-angle: 0;
+}
+
+.sub-nav-list {
+  background-color: var(--very-light-gray);
+  padding-left: calc(var(--base-spacing) * 1.2);
+  color: var(--very-dark-blue);
+}
+
+.sub-nav-list a {
+  display: block;
+  padding: calc(var(--base-spacing) * 0.9) calc(var(--base-spacing) * 1.2);
+}
+
+.sub-nav-list a:focus, .sub-nav-btn:focus {
+  background-color: var(--dark-blue);
+  color: var(--off-white);
 }
 
 /* Main */
@@ -319,11 +343,11 @@ main a:hover, main a:focus {
 
 main a:focus {
   background-color: var(--blue);
-  color: var(--white);
+  color: var(--off-white);
 }
 
 main [data-blue-bg] a:focus {
-  background-color: var(--white);
+  background-color: var(--off-white);
   color: var(--very-dark-blue);
 }
 
@@ -334,7 +358,7 @@ main a.not-inline {
   border: 0.3rem solid transparent;
   padding: var(--base-spacing) calc(var(--base-spacing) * 2.5);
   background-color: var(--blue);
-  color: var(--white);
+  color: var(--off-white);
   font-weight: 700;
   text-align: center;
   text-decoration: none;
@@ -353,7 +377,7 @@ main a.not-inline:hover, main a.not-inline:focus {
 
 .hero, .sub-sect3 {
   background-color: var(--blue);
-  color: var(--white);
+  color: var(--off-white);
 }
 
 .hero {
@@ -381,7 +405,7 @@ main a.not-inline:hover, main a.not-inline:focus {
 }
 
 .hero-txt .intro a:focus {
-  box-shadow: 0.2rem 0.1rem 1rem var(--very-dark-gray);
+  box-shadow: 0.2rem 0.1rem 1rem var(--black);
 }
 
 .hero-txt .intro a:first-of-type, .hero-txt .intro a:last-of-type:hover, .hero-txt .intro a:last-of-type:focus {
@@ -393,11 +417,11 @@ main a.not-inline:hover, main a.not-inline:focus {
 .hero-txt .intro a:last-of-type, .hero-txt .intro a:first-of-type:hover, .hero-txt .intro a:first-of-type:focus {
   color: var(--dark-blue);
   border-color: transparent;
-  background-color: var(--white);
+  background-color: var(--off-white);
 }
 
 .hub {
-  border-top: 0.1rem dashed var(--off-white);
+  border-top: 0.1rem dashed var(--translucent-white);
   padding-top: calc(var(--base-spacing) * 2);
 }
 
@@ -410,7 +434,7 @@ main a.not-inline:hover, main a.not-inline:focus {
   margin: 0 auto var(--base-spacing);
   border-radius: 50%;
   padding: calc(var(--base-spacing) * 1.5);
-  background-color: var(--white);
+  background-color: var(--off-white);
 }
 
 .hub-img svg {
@@ -432,7 +456,7 @@ main a.not-inline:hover, main a.not-inline:focus {
   width: 100%;
   height: 8.2rem;
   border-radius: 100% 100% 0% 0% / 17% 0% 0% 0%;
-  background-color: var(--white);
+  background-color: var(--off-white);
 }
 
 .hero-img img {
@@ -447,7 +471,7 @@ main a.not-inline:hover, main a.not-inline:focus {
 
 .sub-sect2, .sub-sect5, .sub-sect7 {
   background-color: var(--dark-blue);
-  color: var(--white);
+  color: var(--off-white);
 }
 
 [class^="sub-sect"] h2 {
@@ -472,7 +496,7 @@ main a.not-inline:hover, main a.not-inline:focus {
   margin: calc(var(--base-spacing) * 6) 0;
   box-shadow: 0 1.5rem 3.5rem var(--translucent-purple), 0 0.5rem 1.5rem var(--translucent-black);
   padding: calc(var(--base-spacing) * 2);
-  background-color: var(--powder-white);
+  background-color: var(--white);
   text-align: center;
 }
 
@@ -487,7 +511,7 @@ main a.not-inline:hover, main a.not-inline:focus {
   border-radius: 50%;
   border: 0.3rem solid transparent;
   padding: calc(var(--base-spacing) * 2.5);
-  background: linear-gradient(var(--white), var(--white)) padding-box, linear-gradient(135deg, var(--blue) 0%, var(--green) 100%) border-box;
+  background: linear-gradient(var(--off-white), var(--off-white)) padding-box, linear-gradient(135deg, var(--blue) 0%, var(--green) 100%) border-box;
 }
 
 .card-img svg {
@@ -499,23 +523,20 @@ main a.not-inline:hover, main a.not-inline:focus {
   margin-bottom: calc(var(--base-spacing) * 1.6);
   border-radius: 0.6rem;
   border: 0.3rem solid transparent;
-  padding: 0 calc(var(--base-spacing) * 2.4);
   background-color: var(--blue-gray);
 }
 
-.accordion > * {
-  padding: calc(var(--base-spacing) * 2.4) 0;
-}
-
 .accordion:focus-within {
-  border-color: currentColor;
   background-color: var(--very-dark-blue);
+  border-color: currentColor;
 }
 
 .accordion button {
+  width: 100%;
+  padding: calc(var(--base-spacing) * 2.4);
   display: flex;
   align-items: center;
-  column-gap: calc(var(--base-spacing) * 0.5);
+  column-gap: calc(var(--base-spacing) * 0.75);
   font-weight: 700;
   text-align: left;
   line-height: inherit;
@@ -529,6 +550,38 @@ main a.not-inline:hover, main a.not-inline:focus {
   display: block;
   width: 2.4rem;
   height: 2.4rem;
+}
+
+/* 2 keyframes to ensure animation resets after each accordion click */
+@keyframes show {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: var(--accordion-content-height);
+  }
+}
+
+@keyframes hide {
+  0% {
+    max-height: var(--accordion-content-height);
+  }
+  100% {
+    max-height: 0;
+  }
+}
+
+.accordion [id^="panel"] {
+  padding: calc(var(--base-spacing) * 2.4) calc(var(--base-spacing) * 2.4) 0;
+  overflow: hidden;
+}
+
+.accordion [id^="panel"].show {
+  animation: show 0.5s ease-out forwards;
+}
+
+.accordion [id^="panel"].hide {
+  animation: hide 0.5s ease-in forwards;
 }
 
 .sub-sect3 h2 {
@@ -545,7 +598,7 @@ main a.not-inline:hover, main a.not-inline:focus {
   grid-column: 1 / -1;
   margin-bottom: calc(var(--base-spacing) * 2);
   border-radius: 2.5rem;
-  border: 0.5rem solid var(--white);
+  border: 0.5rem solid var(--off-white);
   padding: calc(var(--base-spacing) * 4) calc(var(--base-spacing) * 3);
   position: relative;
 }
@@ -561,7 +614,7 @@ main a.not-inline:hover, main a.not-inline:focus {
   left: 7rem;
   bottom: -2.8rem;
   width: 4rem;
-  background-color: var(--white);
+  background-color: var(--off-white);
   z-index: 2;
 }
 
@@ -656,6 +709,11 @@ main a.not-inline:hover, main a.not-inline:focus {
 }
 
 @media screen and (forced-colors: active) {
+  nav[aria-label="Main"] button:focus,  nav[aria-label="Main"] a:focus {
+    outline: 0.2rem solid;
+    outline-offset: -0.1rem;
+  }
+
   .gradient-icon {
     fill: inherit;
   }
@@ -664,7 +722,27 @@ main a.not-inline:hover, main a.not-inline:focus {
     fill: currentColor;
   }
 
+  .accordion:focus-within {
+    outline: 0.2rem dashed;
+    outline-offset: -0.7rem;
+  }
+
   [aria-label="Testimonial"] .quote-container::before {
     background-color: CanvasText;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  /* set to 0 to prevent transitioning since transition styling is set within the svg file */
+  .sub-nav-btn svg use {
+    --rotation-angle: 0;
+  }
+
+  .accordion [id^="panel"].show {
+    animation: none;
+  }
+  
+  .accordion [id^="panel"].hide {
+    animation: none;
   }
 }
