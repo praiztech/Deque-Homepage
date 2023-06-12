@@ -22,7 +22,7 @@ mainNavList.querySelectorAll(':scope button').forEach((subNavBtn) => {
   });
 });
 
-mainNavList.querySelectorAll(':scope .nav-item').forEach((navItem) => {
+mainNavList.querySelectorAll(':scope .main-nav-item').forEach((navItem) => {
   navItem.addEventListener('focusout', (evt) => {
     const target = evt.currentTarget;
     if (!target.contains(evt.relatedTarget)) toggleContent(target.firstElementChild);
