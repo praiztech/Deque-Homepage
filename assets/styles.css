@@ -327,7 +327,7 @@ header [data-skip]:focus, footer [data-skip]:focus {
 
 .main-subnav-btn {
   width: 100%;
-  padding: calc(var(--base-spacing) * 0.9) calc(var(--base-spacing) * 1.5);
+  padding: calc(var(--base-spacing) * 1.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
