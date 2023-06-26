@@ -1,0 +1,139 @@
+/* HEADER */
+/* Primary Navigation */
+.main-nav-list {
+  justify-content: space-evenly;
+}
+
+.main-subnav-btn {
+  padding: calc(var(--base-spacing) * 1.5);
+}
+
+/* MAIN */
+.hero {
+  padding-bottom: 2%;
+  display: flex;
+}
+
+.hero::after {
+  height: 15rem;
+  top: 95%;
+  bottom: auto;
+  border-radius: 0;
+  clip-path: ellipse(100% 100% at 50% 100%);
+}
+
+.hero-txt, .hero-img {
+  flex-basis: 50%;
+}
+
+.hero-txt h1, .hero-txt p {
+  text-align: left;
+}
+
+.hero-txt h1 {
+  font-weight: 300;
+  font-size: calc(var(--base-font-size) * 2.6);
+}
+
+.intro-links-container {
+  justify-content: flex-start;
+}
+
+.hub {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.hero-img {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* allows its placement over the hero img pseudo-element mask */
+.sub-sect1 {
+  position: relative;
+  z-index: 2;
+}
+
+.card.large {
+  margin-left: 9%;
+  margin-right: 9%;
+  width: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card.large .card-img {
+  grid-row: 1 / span 2;
+  grid-column: 1;
+}
+
+.card.large .card-txt {
+  padding-left: calc(var(--base-spacing) * 5);
+  padding-right: calc(var(--base-spacing) * 8);
+}
+
+.card.large h3, .card.large p {
+  text-align: left;
+}
+
+.card.large .sect-cta {
+  padding-left: calc(var(--base-spacing) * 5);
+  justify-content: flex-start;
+}
+
+.testimonial-intro, [aria-label="Testimonial"], .collab-intro, .collab-img {
+  flex-basis: 48%;
+  padding: 0 1%;
+}
+
+.stats {
+  flex: 1 1 auto;
+  margin-bottom: 0;
+}
+
+.sec-nav-list .top-item {
+  flex: 1 1 0px;
+}
+
+@media (min-width: 73.75em) {
+  .cards-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-top: calc(var(--base-spacing) * 6);
+  }
+  
+  .card {
+    flex: 1 1 0px;
+    margin: 0 1%;
+  }
+
+  .card.large {
+    flex-basis: 100%;
+    margin: 0 9% calc(var(--base-spacing) * 4);
+  }
+
+  .company-info {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .info address {
+    align-items: flex-start;
+  }
+
+  .site-map {
+    justify-content: flex-start;
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--base-spacing) * 0.5);
+    padding-bottom: 0;
+  }
+}

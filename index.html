@@ -7,7 +7,9 @@
   <meta name="author" content="Praise Agbabiaka">
   <meta name="description" content="A modern implementation of Deque's website homepage using HTML, CSS, and vanilla JavaScript.">
   <link rel="preload" href="/assets/fonts/roboto.regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/styles/base.css">
+  <link rel="stylesheet" media="screen and (min-width: 48em)" href="/assets/styles/768.css">
+  <link rel="stylesheet" media="screen and (min-width: 62em)" href="/assets/styles/992.css">
   <script type="module" src="/assets/script.js"></script>
 </head>
 <body>
@@ -19,131 +21,162 @@
           <a href="#">
             <svg role="img" focusable="false" viewBox="0 0 108.68 155.54" class="mobile">
               <title>Deque Homepage</title>
-              <use href="/assets/images/ctrl-icons.svg#mobileLogo" aria-hidden="true" class="ctrl-icon"/>
+              <use href="/assets/images/ctrl-icons.svg#mobile-logo" aria-hidden="true" class="ctrl-icon"/>
             </svg>
-            <svg role="img" focusable="false" viewBox="0 0 123 120" class="desktop">
+            <svg role="img" focusable="false" viewBox="0 0 545.74 192.55" class="desktop">
               <title>Deque Homepage</title>
-              <use href="/assets/images/ctrl-icons.svg#desktopLogo" aria-hidden="true" class="ctrl-icon"/>
+              <use href="/assets/images/ctrl-icons.svg#desktop-logo" aria-hidden="true" class="ctrl-icon"/>
             </svg>
           </a>
         </div>
       </div>
-      <div class="search-widget">
-        <form role="search" action="#">
-          <div class="search-box-container">
-            <div class="search-box">
-              <input id="search-input" type="text" enterkeyhint="search" name="searchInput" value="">
-              <label for="search-input">Search</label>
+      <div class="banner-utils">
+        <div class="search-widget">
+          <form role="search" action="#">
+            <div class="search-box-container">
+              <div class="search-box">
+                <input id="search-input" type="text" enterkeyhint="search" name="searchInput" value="">
+                <label for="search-input">Search</label>
+              </div>
             </div>
-          </div>
-          <button type="submit" class="ctrl">
-            <span role="none" data-visually-hidden>Go</span>
-            <svg viewBox="0 0 123 120" focusable="false" aria-hidden="true">
-              <use href="/assets/images/ctrl-icons.svg#searchIcon" class="ctrl-icon"/>
-            </svg>
-          </button>
-        </form>
+            <button type="submit" class="ctrl">
+              <span role="none" data-visually-hidden>Go</span>
+              <svg viewBox="0 0 123 120" focusable="false" aria-hidden="true">
+                <use href="/assets/images/ctrl-icons.svg#search-icon" class="ctrl-icon"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+        <ul class="utils-desktop-links">
+          <li><a href="#">Free Trial</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
       </div>
     </div>
-    <nav aria-label="Main">
-      <button type="button" aria-expanded="false" aria-controls="main-nav-list" class="hamburger-btn" data-main-nav>
-        <span role="none">Menu</span>
-        <svg viewBox="0 0 28 24" focusable="false" aria-hidden="true">
-          <use href="/assets/images/ctrl-icons.svg#menuIcon" class="ctrl-icon"/>
-        </svg>
-      </button>
-      <ul id="main-nav-list" class="main-nav-list" hidden>
-        <li class="main-nav-item">
-          <button type="button" aria-expanded="false" aria-controls="tools-list" class="main-subnav-btn">
-            <span role="none">axe Tools</span>
-            <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
-              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-            </svg>
-          </button>
-          <ul id="tools-list" class="main-subnav-list" hidden>
-            <li><a href="#">axe Tools Overview</a></li>
-            <li><a href="#">axe DevTools</a></li>
-            <li><a href="#">axe Auditor</a></li>
-            <li><a href="#">axe Monitor</a></li>
-            <li><a href="#">Android Accessibility</a></li>
-            <li><a href="#">iOS Accessibility</a></li>
-            <li><a href="#">axe for Designers (Beta)</a></li>
-            <li><a href="#">axe Developer Hub (Beta)</a></li>
-          </ul>
-        </li>
-        <li class="main-nav-item">
-          <button type="button" aria-expanded="false" aria-controls="solutions-list" class="main-subnav-btn">
-            <span role="none">Solutions</span>
-            <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
-              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-            </svg>
-          </button>
-          <ul id="solutions-list" class="main-subnav-list" hidden>
-            <li><a href="#">Solutions Overview</a></li>
-            <li><a href="#">Accessibility Audits & Compliance Testing</a></li>
-            <li><a href="#">VPAT</a></li>
-            <li><a href="#">End-to-End Testing</a></li>
-            <li><a href="#">Program Strategy & Consulting</a></li>
-            <li><a href="#">Training</a></li>
-          </ul>
-        </li>
-        <li class="main-nav-item">
-          <button type="button" aria-expanded="false" aria-controls="news-list" class="main-subnav-btn">
-            <span role="none">News & Resources</span>
-            <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
-              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-            </svg>
-          </button>
-          <ul id="news-list" class="main-subnav-list" hidden>
-            <li><a href="#">News & Resources Overview</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Accessibility in Design</a></li>
-            <li><a href="#">Accessibility in Development</a></li>
-            <li><a href="#">Webinars</a></li>
-          </ul>
-        </li>
-        <li class="main-nav-item">
-          <button type="button" aria-expanded="false" aria-controls="compliance-list" class="main-subnav-btn">
-            <span role="none">Compliance</span>
-            <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
-              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-            </svg>
-          </button>
-          <ul id="compliance-list" class="main-subnav-list" hidden>
-            <li><a href="#">Compliance Overview</a></li>
-            <li><a href="#">ADA</a></li>
-            <li><a href="#">WCAG</a></li>
-            <li><a href="#">Section 508</a></li>
-            <li><a href="#">AODA</a></li>
-          </ul>
-        </li>
-        <li class="main-nav-item">
-          <button type="button" aria-expanded="false" aria-controls="company-list" class="main-subnav-btn">
-            <span role="none">Company</span>
-            <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
-              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-            </svg>
-          </button>
-          <ul id="company-list" class="main-subnav-list" hidden>
-            <li><a href="#">Company Overview</a></li>
-            <li><a href="#">Our Customers</a></li>
-            <li><a href="#">Partners</a></li>
-            <li><a href="#">Our Team</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
   </header>
+  <div id="primary-nav" class="primary-nav">
+    <button type="button" aria-expanded="false" aria-controls="top-links" class="hamburger-btn">
+      <span role="none">Menu</span>
+      <svg viewBox="0 0 28 24" focusable="false" aria-hidden="true">
+        <use href="/assets/images/ctrl-icons.svg#menu-icon" class="ctrl-icon"/>
+      </svg>
+    </button>
+    <div class="top-links" id="top-links">
+      <nav aria-label="Main">
+        <ul id="main-nav-list" class="main-nav-list">
+          <li class="top-item">
+            <button id="tools-list-ctrl" type="button" aria-expanded="false" aria-controls="tools-list" class="main-subnav-btn hidden-sublist">
+              <span role="none">axe Tools</span>
+              <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
+                <use href="/assets/images/ctrl-icons.svg#show-icon" class="ctrl-icon"/>
+              </svg>
+            </button>
+            <div role="none" class="main-subnav-list-container" hidden>
+              <ul id="tools-list" aria-labelledby="tools-list-ctrl" class="main-subnav-list">
+                <li><a href="#">axe Tools Overview</a></li>
+                <li><a href="#">axe DevTools</a></li>
+                <li><a href="#">axe Auditor</a></li>
+                <li><a href="#">axe Monitor</a></li>
+                <li><a href="#">Android Accessibility</a></li>
+                <li><a href="#">iOS Accessibility</a></li>
+                <li><a href="#">axe for Designers (Beta)</a></li>
+                <li><a href="#">axe Developer Hub (Beta)</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="top-item">
+            <button id="solutions-list-ctrl" type="button" aria-expanded="false" aria-controls="solutions-list" class="main-subnav-btn hidden-sublist">
+              <span role="none">Solutions</span>
+              <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
+                <use href="/assets/images/ctrl-icons.svg#show-icon" class="ctrl-icon"/>
+              </svg>
+            </button>
+            <div role="none" class="main-subnav-list-container" hidden>
+              <ul id="solutions-list" aria-labelledby="solutions-list-ctrl" class="main-subnav-list">
+                <li><a href="#">Solutions Overview</a></li>
+                <li><a href="#">Accessibility Audits & Compliance Testing</a></li>
+                <li><a href="#">VPAT</a></li>
+                <li><a href="#">End-to-End Testing</a></li>
+                <li><a href="#">Program Strategy & Consulting</a></li>
+                <li><a href="#">Training</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="top-item">
+            <button id="news-list-ctrl" type="button" aria-expanded="false" aria-controls="news-list" class="main-subnav-btn hidden-sublist">
+              <span role="none">News & Resources</span>
+              <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
+                <use href="/assets/images/ctrl-icons.svg#show-icon" class="ctrl-icon"/>
+              </svg>
+            </button>
+            <div role="none" class="main-subnav-list-container" hidden>
+              <ul id="news-list" aria-labelledby="news-list-ctrl" class="main-subnav-list">
+                <li><a href="#">News & Resources Overview</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Accessibility in Design</a></li>
+                <li><a href="#">Accessibility in Development</a></li>
+                <li><a href="#">Webinars</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="top-item">
+            <button id="compliance-list-ctrl" type="button" aria-expanded="false" aria-controls="compliance-list" class="main-subnav-btn hidden-sublist">
+              <span role="none">Compliance</span>
+              <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
+                <use href="/assets/images/ctrl-icons.svg#show-icon" class="ctrl-icon"/>
+              </svg>
+            </button>
+            <div role="none" class="main-subnav-list-container" hidden>
+              <ul id="compliance-list" aria-labelledby="compliance-list-ctrl" class="main-subnav-list">
+                <li><a href="#">Compliance Overview</a></li>
+                <li><a href="#">ADA</a></li>
+                <li><a href="#">WCAG</a></li>
+                <li><a href="#">Section 508</a></li>
+                <li><a href="#">AODA</a></li>
+                <li><a href="#">EN 301 549</a></li>
+                <li><a href="#">VPAT</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="top-item">
+            <button id="company-list-ctrl" type="button" aria-expanded="false" aria-controls="company-list" class="main-subnav-btn hidden-sublist">
+              <span role="none">Company</span>
+              <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
+                <use href="/assets/images/ctrl-icons.svg#show-icon" class="ctrl-icon"/>
+              </svg>
+            </button>
+            <div role="none" class="main-subnav-list-container" hidden>
+              <ul id="company-list" aria-labelledby="company-list-ctrl" class="main-subnav-list">
+                <li><a href="#">Company Overview</a></li>
+                <li><a href="#">Our Customers</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Accessibility Statement</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <ul class="utils-mobile-links">
+        <li class="top-item"><a href="#">Free Trial</a></li>
+        <li class="top-item"><a href="#">Login</a></li>
+      </ul>
+    </div>
+  </div>
   <main>
     <div class="hero">
-      <div class="hero-txt" data-white-focus>
+      <div class="hero-txt">
         <div class="intro">
           <h1 id="main" tabindex="-1">We make digital experiences accessible to everyone</h1>
           <p>Take the ambiguity out of web & mobile accessibility testing and compliance with tools, training and services from Deque.</p>
-          <a href="#" class="not-inline ctrl">Request a Demo</a>
-          <a href="#" class="not-inline ctrl">Request Free Consultation</a>
+          <div class="intro-links-container">
+            <a href="#" class="ctrl">Request a Demo</a>
+            <a href="#" class="ctrl">Free Consultation</a>
+          </div>
         </div>
-        <div class="hub">
+        <div class="hub" data-white-focus>
           <div class="hub-img">
             <svg viewBox="0 0 43 41" focusable="false" aria-hidden="true" class="gradient-icon">
               <defs>
@@ -155,7 +188,10 @@
               <path d="M-1577.175-454.083a2.111,2.111,0,0,1-2.026-2.182V-492.62a2.11,2.11,0,0,1,2.026-2.182H-1538a2.11,2.11,0,0,1,2.026,2.182v36.355a2.111,2.111,0,0,1-2.026,2.182Zm-.676-2.182a.7.7,0,0,0,.676.727H-1538a.7.7,0,0,0,.675-.727V-492.62a.7.7,0,0,0-.675-.727h-8.1a.7.7,0,0,0-.676.727v.909a2.11,2.11,0,0,1-2.026,2.181h-29.041Zm0-36.355v1.636h29.041a.7.7,0,0,0,.675-.727v-.909a2.283,2.283,0,0,1,.125-.727h-29.165A.7.7,0,0,0-1577.85-492.62Zm13.9,35.819h-11.25a1,1,0,0,1-1-1v-9a1,1,0,0,1,1-1h35a1,1,0,0,1,1,1v9a1,1,0,0,1-1,1Zm0-1.5h23.251v-8h-23.251Zm-10.75,0h9.25v-8h-9.25Zm12.5-1.25a.75.75,0,0,1-.75-.75.75.75,0,0,1,.75-.75h4a.75.75,0,0,1,.751.75.75.75,0,0,1-.751.75Zm-7.836-.552a1.184,1.184,0,0,1-.472-1.03l.006-.017.961-.049a.7.7,0,0,0,.187.518.671.671,0,0,0,.492.186.575.575,0,0,0,.515-.248,1.141,1.141,0,0,0,.166-.647,1.206,1.206,0,0,0-.177-.69.6.6,0,0,0-.527-.26.759.759,0,0,0-.439.106.57.57,0,0,0-.217.287l-.878-.059.287-2.772h2.775v.8h-1.958l-.137,1.148a1.185,1.185,0,0,1,.332-.169,1.407,1.407,0,0,1,.43-.07,1.38,1.38,0,0,1,1.112.434,1.8,1.8,0,0,1,.4,1.237,1.707,1.707,0,0,1-.432,1.193,1.6,1.6,0,0,1-1.247.474A1.876,1.876,0,0,1-1570.037-460.1Zm-2.568.3V-463.9h-1.012v-.7l2.01-.178v4.977Zm10.4-1.75a.75.75,0,0,1-.75-.75.75.75,0,0,1,.75-.75h7a.75.75,0,0,1,.75.75.75.75,0,0,1-.75.75Zm0-2a.75.75,0,0,1-.75-.75.75.75,0,0,1,.75-.751h4a.75.75,0,0,1,.751.751.75.75,0,0,1-.751.75Zm-1.75-5.251h-11.25a1,1,0,0,1-1-1v-9a1,1,0,0,1,1-1h35a1,1,0,0,1,1,1v9a1,1,0,0,1-1,1Zm0-1.5h23.251v-8h-23.251Zm-10.75,0h9.25v-8h-9.25Zm12.5-1.25a.75.75,0,0,1-.75-.75.75.75,0,0,1,.75-.75h4a.75.75,0,0,1,.751.75.75.75,0,0,1-.751.75Zm-7.836-.552a1.184,1.184,0,0,1-.472-1.031l.006-.017.961-.049a.7.7,0,0,0,.187.518.671.671,0,0,0,.492.186.575.575,0,0,0,.515-.248,1.141,1.141,0,0,0,.166-.647,1.206,1.206,0,0,0-.177-.69.6.6,0,0,0-.527-.26.759.759,0,0,0-.439.106.57.57,0,0,0-.217.287l-.878-.059.287-2.772h2.775v.8h-1.958l-.137,1.148a1.186,1.186,0,0,1,.332-.169,1.407,1.407,0,0,1,.43-.07,1.38,1.38,0,0,1,1.112.434,1.8,1.8,0,0,1,.4,1.237,1.707,1.707,0,0,1-.432,1.193,1.6,1.6,0,0,1-1.247.474A1.876,1.876,0,0,1-1570.037-472.1Zm-2.568.3v-4.1h-1.012v-.7l2.01-.178v4.977Zm10.4-1.751a.75.75,0,0,1-.75-.75.75.75,0,0,1,.75-.75h7a.75.75,0,0,1,.75.75.75.75,0,0,1-.75.75Zm0-2a.75.75,0,0,1-.75-.75.75.75,0,0,1,.75-.751h4a.75.75,0,0,1,.751.751.75.75,0,0,1-.751.75Zm-13-5.25a1,1,0,0,1-1-1v-3a1,1,0,0,1,1-1h35a1,1,0,0,1,1,1v3a1,1,0,0,1-1,1Zm.5-1.5h34v-2h-34Zm5.228-4.25c-.265,0-.478-.336-.478-.751s.213-.75.478-.75h2.548c.264,0,.477.336.477.75s-.213.751-.477.751Zm-5.978,0a.75.75,0,0,1-.751-.751.75.75,0,0,1,.751-.75h4a.75.75,0,0,1,.75.75.75.75,0,0,1-.75.751Zm35.617-4.393a.71.71,0,0,1-.2-.48.693.693,0,0,1,.2-.48.708.708,0,0,1,.958,0,.706.706,0,0,1,.2.48.71.71,0,0,1-.2.48.711.711,0,0,1-.479.2A.71.71,0,0,1-1539.834-490.945Zm-2.7,0a.7.7,0,0,1-.2-.48.693.693,0,0,1,.2-.48.709.709,0,0,1,.959,0,.71.71,0,0,1,.2.48.714.714,0,0,1-.2.48.711.711,0,0,1-.48.2A.71.71,0,0,1-1542.536-490.945Zm-2.7,0a.71.71,0,0,1-.2-.48.706.706,0,0,1,.2-.48.709.709,0,0,1,.959,0,.71.71,0,0,1,.2.48.713.713,0,0,1-.2.48.713.713,0,0,1-.48.2A.673.673,0,0,1-1545.237-490.945Z" transform="translate(1579.201 494.801)" fill="url(#gradient)"/>
             </svg>
           </div>
-          <p>Stop accessibility bugs with GitHub actions. <a href="#">Get priority access</a>.</p>
+          <div class="hub-txt">
+            <p>Stop accessibility bugs with GitHub actions.</p>
+            <p>Track your progress with each new release. <a href="#">Get priority access</a>.</p>
+          </div>
         </div>
       </div>
       <div class="hero-img">
@@ -164,111 +200,125 @@
     </div>
     <div class="sub-sect1">
       <h2>Why customers choose Deque</h2>
-      <div class="card">
-        <div class="card-img">
-          <svg viewBox="0 0 622 623" focusable="false" aria-hidden="true">
-            <use href="/assets/images/decorative-imgs.svg#goal" class="decorative-icon"/>
-          </svg>
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-img">
+            <svg viewBox="0 0 622 623" focusable="false" aria-hidden="true">
+              <use href="/assets/images/decorative-imgs.svg#goal" class="decorative-icon"/>
+            </svg>
+          </div>
+          <div class="card-txt">
+            <h3>We’re your partner</h3>
+            <p>Let’s meet you where you are and build a pragmatic plan for advancement together.</p>
+          </div>
         </div>
-        <h3>We’re your partner</h3>
-        <p>Let’s meet you where you are and build a pragmatic plan for advancement together.</p>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <svg viewBox="0 0 608 608" focusable="false" aria-hidden="true">
-            <use href="/assets/images/decorative-imgs.svg#handshake" class="decorative-icon"/>
-          </svg>
+        <div class="card">
+          <div class="card-img">
+            <svg viewBox="0 0 608 608" focusable="false" aria-hidden="true">
+              <use href="/assets/images/decorative-imgs.svg#handshake" class="decorative-icon"/>
+            </svg>
+          </div>
+          <div class="card-txt">
+            <h3>We’re trusted</h3>
+            <p>Deque’s tactical and strategic accessibility expertise is unparalleled.</p>
+          </div>
         </div>
-        <h3>We’re trusted</h3>
-        <p>Deque’s tactical and strategic accessibility expertise is unparalleled.</p>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <svg viewBox="0 0 800 800" focusable="false" aria-hidden="true" class="gradient-icon">
-            <path d="M641.4,555.6c-27.2-12.1-59.1,0.2-71.2,27.3c-0.5,1-0.8,2.1-1.2,3.2H160l227.6-394.3l170.1,292.8l32.4-18.8L387.5,117L95,623.6h474c4.9,13.1,14.8,24.4,28.6,30.5c7.1,3.2,14.5,4.7,21.8,4.7c20.7,0,40.4-11.9,49.3-32C680.8,599.7,668.6,567.7,641.4,555.6z M643,615.4c-5.8,13-21.1,18.9-34,13.1c-13-5.8-18.9-21.1-13.1-34c4.3-9.6,13.7-15.3,23.6-15.3c3.5,0,7.1,0.7,10.4,2.2C643,587.1,648.8,602.4,643,615.4z" fill="url(#gradient)"/>
-            <path d="M379,549.9h-27.6v-16.7c-7.4,13.5-22.8,20.2-39,20.2c-37.1,0-58.9-28.9-58.9-61.6c0-36.5,26.4-61.4,58.9-61.4c21.1,0,34,11.2,39,20.5V434H379V549.9z M281.2,492.5c0,14.3,10.3,35.2,35.2,35.2c15.4,0,25.5-8,30.8-18.6c2.7-5.1,4-10.5,4.4-16.2c0.2-5.5-0.8-11.2-3.2-16.2c-4.9-11-15.6-20.5-32.3-20.5c-22.4,0-35,18.1-35,36.1v0.2H281.2z" fill="url(#gradient)"/>
-            <path d="M436.2,488.9l-39-54.8h33.3l22.6,35.6l22.6-35.6h32.9l-38.8,54.8l43.2,61h-34L453.1,510l-26.2,39.9h-33.5L436.2,488.9z" fill="url(#gradient)"/>
-          </svg>
+        <div class="card">
+          <div class="card-img">
+            <svg viewBox="0 0 800 800" focusable="false" aria-hidden="true" class="gradient-icon">
+              <path d="M641.4,555.6c-27.2-12.1-59.1,0.2-71.2,27.3c-0.5,1-0.8,2.1-1.2,3.2H160l227.6-394.3l170.1,292.8l32.4-18.8L387.5,117L95,623.6h474c4.9,13.1,14.8,24.4,28.6,30.5c7.1,3.2,14.5,4.7,21.8,4.7c20.7,0,40.4-11.9,49.3-32C680.8,599.7,668.6,567.7,641.4,555.6z M643,615.4c-5.8,13-21.1,18.9-34,13.1c-13-5.8-18.9-21.1-13.1-34c4.3-9.6,13.7-15.3,23.6-15.3c3.5,0,7.1,0.7,10.4,2.2C643,587.1,648.8,602.4,643,615.4z" fill="url(#gradient)"/>
+              <path d="M379,549.9h-27.6v-16.7c-7.4,13.5-22.8,20.2-39,20.2c-37.1,0-58.9-28.9-58.9-61.6c0-36.5,26.4-61.4,58.9-61.4c21.1,0,34,11.2,39,20.5V434H379V549.9z M281.2,492.5c0,14.3,10.3,35.2,35.2,35.2c15.4,0,25.5-8,30.8-18.6c2.7-5.1,4-10.5,4.4-16.2c0.2-5.5-0.8-11.2-3.2-16.2c-4.9-11-15.6-20.5-32.3-20.5c-22.4,0-35,18.1-35,36.1v0.2H281.2z" fill="url(#gradient)"/>
+              <path d="M436.2,488.9l-39-54.8h33.3l22.6,35.6l22.6-35.6h32.9l-38.8,54.8l43.2,61h-34L453.1,510l-26.2,39.9h-33.5L436.2,488.9z" fill="url(#gradient)"/>
+            </svg>
+          </div>
+          <div class="card-txt">
+            <h3>We’ve got the tools</h3>
+            <p>Axe is the most trusted and accurate accessibility testing toolkit on the planet.</p>
+          </div>
         </div>
-        <h3>We’ve got the tools</h3>
-        <p>Axe is the most trusted and accurate accessibility testing toolkit on the planet.</p>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <svg viewBox="0 0 622 623" focusable="false" aria-hidden="true">
-            <use href="/assets/images/decorative-imgs.svg#cycle" class="decorative-icon"/>
-          </svg>
+        <div class="card">
+          <div class="card-img">
+            <svg viewBox="0 0 622 623" focusable="false" aria-hidden="true">
+              <use href="/assets/images/decorative-imgs.svg#cycle" class="decorative-icon"/>
+            </svg>
+          </div>
+          <div class="card-txt">
+            <h3>We’re focused on sustainability</h3>
+            <p>Deque’s emphasis on shift-left accessibility is unique and critical for success.</p>
+          </div>
         </div>
-        <h3>We’re focused on sustainability</h3>
-        <p>Deque’s emphasis on shift-left accessibility is unique and critical for success.</p>
       </div>
     </div>
     <div class="sub-sect2" data-dark-blue-bg data-white-focus>
       <h2>Avoid common pitfalls</h2>
-      <div class="accordion">
-        <h3>
-          <button type="button" aria-expanded="false" aria-controls="panel1">
-            <span>Achieving compliance adds complexity and disrupts your business</span>
-            <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
-              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-            </svg>
-          </button>
-        </h3>
-        <div id="panel1" hidden>
-          <p>
-            Follow our proven approach and deliver inclusive digital experiences that don’t impact streamlined operations.
-          </p>
+      <div class="accordions-container wrapper">
+        <div class="accordion">
+          <h3>
+            <button type="button" aria-expanded="false" aria-controls="panel1">
+              <span>Achieving compliance adds complexity and disrupts your business</span>
+              <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
+                <use href="/assets/images/ctrl-icons.svg#show-icon" class="ctrl-icon"/>
+              </svg>
+            </button>
+          </h3>
+          <div id="panel1" hidden>
+            <p>
+              Follow our proven approach and deliver inclusive digital experiences that don’t impact streamlined operations.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="accordion">
-        <h3>
-          <button type="button" aria-expanded="false" aria-controls="panel2">
-            <span>Uncertainty and false starts lead to inaction and legal risk</span>
-            <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
-              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-            </svg>
-          </button>
-        </h3>
-        <div id="panel2" hidden>
-          <p>
-            With Deque’s tools and processes, developing and maintaining accessible experiences doesn’t have to be complicated.
-          </p>
+        <div class="accordion">
+          <h3>
+            <button type="button" aria-expanded="false" aria-controls="panel2">
+              <span>Uncertainty and false starts lead to inaction and legal risk</span>
+              <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
+                <use href="/assets/images/ctrl-icons.svg#show-icon" class="ctrl-icon"/>
+              </svg>
+            </button>
+          </h3>
+          <div id="panel2" hidden>
+            <p>
+              With Deque’s tools and processes, developing and maintaining accessible experiences doesn’t have to be complicated.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="accordion">
-        <h3>
-          <button type="button" aria-expanded="false" aria-controls="panel3">
-            <span>Reactive and strictly manual accessibility testing is slow and costly</span>
-            <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
-              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-            </svg>
-          </button>
-        </h3>
-        <div id="panel3" hidden>
-          <p>
-            We automate more accessibility testing than any company on the planet because this is the only way to make it efficient and sustainable.
-          </p>
+        <div class="accordion">
+          <h3>
+            <button type="button" aria-expanded="false" aria-controls="panel3">
+              <span>Reactive and strictly manual accessibility testing is slow and costly</span>
+              <svg viewBox="0 0 80 80" focusable="false" aria-hidden="true">
+                <use href="/assets/images/ctrl-icons.svg#show-icon" class="ctrl-icon"/>
+              </svg>
+            </button>
+          </h3>
+          <div id="panel3" hidden>
+            <p>
+              We automate more accessibility testing than any company on the planet because this is the only way to make it efficient and sustainable.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="accordion">
-        <h3>
-          <button type="button" aria-expanded="false" aria-controls="panel4">
-            <span>Vendors who promise magic auto-fixing solutions burden your customers</span>
-            <svg viewBox="0 0 80 80" aria-hidden="true">
-              <use href="/assets/images/ctrl-icons.svg#showIcon" class="ctrl-icon"/>
-            </svg>
-          </button>
-        </h3>
-        <div id="panel4" hidden>
-          <p>
-            Give your customers direct access to your digital experiences by design instead of through a third-party widget.
-          </p>
+        <div class="accordion">
+          <h3>
+            <button type="button" aria-expanded="false" aria-controls="panel4">
+              <span>Vendors who promise magic auto-fixing solutions burden your customers</span>
+              <svg viewBox="0 0 80 80" aria-hidden="true">
+                <use href="/assets/images/ctrl-icons.svg#show-icon" class="ctrl-icon"/>
+              </svg>
+            </button>
+          </h3>
+          <div id="panel4" hidden>
+            <p>
+              Give your customers direct access to your digital experiences by design instead of through a third-party widget.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="sub-sect3">
-      <h2>Deque is the leader in accessibility tools, services and training</h2>
-      <p>Our experts help define web standards, and with over 475,000 deployments worldwide, our tools are the de facto standard for automated accessibility testing.</p>
+    <div class="sub-sect3 wrapper">
+      <div class="testimonial-intro">
+        <h2>Deque is the leader in accessibility tools, services and training</h2>
+        <p>Our experts help define web standards, and with over 475,000 deployments worldwide, our tools are the de facto standard for automated accessibility testing.</p>
+      </div>
       <figure aria-label="Testimonial">
         <div class="quote-container">
           <blockquote>
@@ -281,8 +331,8 @@
     </div>
     <div class="sub-sect4">
       <h2>Our Customers</h2>
-      <ul role="list">
-        <li class="customer">
+      <ul role="list" class="brands-container wrapper">
+        <li class="customer brand">
           <a href="#">
           <svg role="img" focusable="false" viewBox="0 0 200 100">
             <title>Clever</title>
@@ -290,7 +340,7 @@
           </svg>
           </a>
         </li>
-        <li class="customer">
+        <li class="customer brand">
           <a href="#">
             <svg role="img" focusable="false" viewBox="0 0 250 125">
               <title>Articulate</title>
@@ -298,7 +348,7 @@
             </svg>
           </a>
         </li>
-        <li class="customer">
+        <li class="customer brand">
           <a href="#">
             <svg role="img" focusable="false" viewBox="0 0 200 100">
               <title>Macerich</title>
@@ -306,7 +356,7 @@
             </svg>
           </a>
         </li>
-        <li class="customer">
+        <li class="customer brand">
           <a href="#">
             <svg role="img" focusable="false" viewBox="0 0 200 100">
               <title>Puritan Life Insurance</title>
@@ -314,7 +364,7 @@
             </svg>
           </a>
         </li>
-        <li class="customer">
+        <li class="customer brand">
           <a href="#">
             <svg role="img" focusable="false" viewBox="0 0 200 100">
               <title>Freshworks</title>
@@ -322,7 +372,7 @@
             </svg>
           </a>
         </li>
-        <li class="customer">
+        <li class="customer brand">
           <a href="#">
             <svg role="img" focusable="false" viewBox="0 0 200 100">
               <title>UserTesting</title>
@@ -331,7 +381,7 @@
           </a>
         </li>
       </ul>
-      <a href="#" class="not-inline ctrl">View More Customers</a>
+      <div class="sect-cta"><a href="#" class="ctrl">View More Customers</a></div>
     </div>
     <div class="sub-sect5" data-dark-blue-bg data-white-focus>
       <h2>Don't wait. Get started now...</h2>
@@ -380,20 +430,24 @@
           </div>
         </div>
       </div>
-      <a href="#" class="not-inline ctrl">Book a Free Consultation</a>
+      <div class="sect-cta"><a href="#" class="ctrl">Book a Free Consultation</a></div>
     </div>
     <div class="sub-sect6">
       <h2>Tools, services and training that simplify accessibility compliance</h2>
-      <p>Don’t put your trust in unreliable accessibility tools and processes that create inaccessible experiences and generate ongoing legal and development costs for your business.</p> 
-      <p> Our <a href="#">training</a>, <a href="#">tools</a> and <a href="#">programs</a> take the uncertainty out of web accessibility compliance. We provide you with the knowledge and experience you need to simplify your development processes and deliver accessibility by default throughout your organization.</p>
-      <div class="collab-img">
-        <img src="/assets/images/collab.svg" alt="Illustration of 2 software developers bumping fists to celebrate working together">
+      <div class="collab-container wrapper">
+        <div class="collab-intro">
+          <p>Don’t put your trust in unreliable accessibility tools and processes that create inaccessible experiences and generate ongoing legal and development costs for your business.</p> 
+          <p> Our <a href="#">training</a>, <a href="#">tools</a> and <a href="#">programs</a> take the uncertainty out of web accessibility compliance. We provide you with the knowledge and experience you need to simplify your development processes and deliver accessibility by default throughout your organization.</p>
+        </div>
+        <div class="collab-img">
+          <img src="/assets/images/collab.svg" alt="2 software developers bumping fists to celebrate working together">
+        </div>
       </div>
     </div>
     <div class="sub-sect7" data-dark-blue-bg data-white-focus>
       <h2>Accessibility leadership you can trust</h2>
-      <ul role="list" aria-label="Stats">
-        <li>
+      <ul role="list" aria-label="Stats" class="wrapper">
+        <li class="stats">
           <div class="stats-img">
             <svg viewBox="0 0 512 512" aria-hidden="true">
               <use href="/assets/images/decorative-imgs.svg#banks" class="decorative-icon"/>
@@ -403,7 +457,7 @@
             <span>8<span aria-hidden="true">/</span><span data-visually-hidden>of </span>10 </span><span>Top US Banks</span>
           </p>
         </li>
-        <li>
+        <li class="stats">
           <div class="stats-img">
             <svg viewBox="0 0 100 100" aria-hidden="true">
               <use href="/assets/images/decorative-imgs.svg#downloads" class="decorative-icon"/>
@@ -413,7 +467,7 @@
             <span>800,000,000+ </span><span>Downloads</span>
           </p>
         </li>
-        <li>
+        <li class="stats">
           <div class="stats-img">
             <svg viewBox="0 0 100 100" aria-hidden="true">
               <use href="/assets/images/decorative-imgs.svg#extensions" class="decorative-icon"/>
@@ -423,7 +477,7 @@
             <span>875,000+ </span><span>Installed Extensions</span>
           </p>
         </li>
-        <li>
+        <li class="stats">
           <div class="stats-img">
             <svg viewBox="0 0 100 100" aria-hidden="true">
               <use href="/assets/images/decorative-imgs.svg#audits" class="decorative-icon"/>
@@ -434,94 +488,146 @@
           </p>
         </li>
       </ul>
-      <a href="#" class="not-inline ctrl">Learn More About Deque</a>
+      <div class="sect-cta"><a href="#" class="ctrl">Learn More About Deque</a></div>
     </div>
     <div class="sub-sect8">
       <h2>Accessibility solutions for your environment of choice</h2>
-      <ul role="list">
-        <li>
+      <ul role="list" class="brands-container wrapper">
+        <li class="brand">
           <svg role="img" focusable="false" viewBox="0 0 512 512" width="60" height="60">
             <title>Mocha</title>
             <use href="/assets/images/environ-logos.svg#mocha" aria-hidden="true"/>
           </svg>
         </li>
-        <li>
+        <li class="brand">
           <svg role="img" focusable="false" viewBox="0 0 139.38 34" width="140" height="34">
             <title>Selenium</title>
             <use href="/assets/images/environ-logos.svg#selenium" aria-hidden="true"/>
           </svg>
         </li>
-        <li>
+        <li class="brand">
           <svg role="img" focusable="false" viewBox="0 0 712 198" width="180" height="50">
             <title>Karma</title>
             <use href="/assets/images/environ-logos.svg#karma" aria-hidden="true"/>
           </svg>
         </li>
-        <li>
+        <li class="brand">
           <svg role="img" focusable="false" viewBox="0 0 120 60" width="120" height="60">
             <title>Cucumber</title>
             <use href="/assets/images/environ-logos.svg#cucumber" aria-hidden="true"/>
           </svg>
         </li>
-        <li>
+        <li class="brand">
           <svg role="img" focusable="false" viewBox="0 0 672 147" width="120" height="33">
             <title>Jasmine</title>
             <use href="/assets/images/environ-logos.svg#jasmine" aria-hidden="true"/>
           </svg>
         </li>
-        <li>
+        <li class="brand">
           <svg role="img" focusable="false" viewBox="30 90 190 4" width="225" height="72">
             <title>SauceLabs</title>
             <use href="/assets/images/environ-logos.svg#saucelabs" aria-hidden="true"/>
           </svg>
         </li>
-        <li>
+        <li class="brand">
           <svg role="img" focusable="false" viewBox="0 0 85 32" width="170" height="64">
             <title>Rspec</title>
             <use href="/assets/images/environ-logos.svg#rspec" aria-hidden="true"/>
           </svg>
         </li>
-        <li>
+        <li class="brand">
           <svg role="img" focusable="false" viewBox="0 0 462 106" width="200" height="45">
             <title>Maven</title>
             <use href="/assets/images/environ-logos.svg#maven" aria-hidden="true"/>
           </svg>
         </li>
-        <li>
+        <li class="brand">
           <svg role="img" focusable="false" viewBox="10 10 1017.716 311.856" width="120" height="37">
             <title>Jenkins</title>
             <use href="/assets/images/environ-logos.svg#jenkins" aria-hidden="true"/>
           </svg>
         </li>
       </ul>
-      <a href="#" class="not-inline ctrl">Learn How Deque Supports these Environments</a>
+      <div class="sect-cta"><a href="#" class="ctrl">Learn how Deque Supports these Environments</a></div>
     </div>
     <div class="sub-sect9">
       <h2>Accessibility news & resources</h2>
-      <div class="card">
-        <h3><div role="text"><span>Free Testing Tool </span><span>Axe DevTools Browser Extension</span></div></h3>
-        <p>Automatically catch accessibility issues with the click of a button. Start a free trial to export, save and share those issues with the rest of your team.</p>
-        <a href="#" class="not-inline ctrl">Start Free Trial</a>
-      </div>
-      <div class="card">
-        <h3><div role="text"><span>Event </span><span>Global Accessibility Awareness Day (GAAD)</span></div></h3>
-        <p>GAAD is a great way to learn about accessibility. Join Deque's free, virtual events to celebrate this accessibility holiday!</p>
-        <a href="#" class="not-inline ctrl">Learn More About GAAD</a>
-      </div>
-      <div class="card">
-        <h3><div role="text"><span>Report </span><span>Market Guide for Accessibility</span></div></h3>
-        <p>Learn how AI is shaping the future of digital accessibility. Deque Systems is named a Representative Vendor.</p>
-        <a href="#" class="not-inline ctrl">Read the Market Guide</a>
-      </div>
-      <div class="card">
-        <h3><div role="text"><span>News </span><span>Deque Adds Linter to axe DevTools</span></div></h3>
-        <p>Dev teams can leverage a new linter service that makes automated accessibility testing even easier.</p>
-        <a href="#" class="not-inline ctrl">Read More About Deque’s Linter</a>
-      </div>
-      <div class="card">
-        <h3><div role="text"><span>Infographic </span><span>Essential Guide to Digital Accessibility</span></div></h3>
-        <p>Understand the basics of web accessibility with this handy collection of stats and definitions.</p>
-        <a href="#" class="not-inline ctrl">Download Infographic</a>
+      <div class="cards-container">
+        <div class="large card">
+          <div class="card-img">
+            <img src="/assets/images/axe-dev-tools.png" alt="" loading="lazy">
+          </div>
+          <div class="card-txt">
+            <h3>
+              <div role="text" class="title">
+              <span class="badge">Free Testing Tool </span>
+              <span>Axe DevTools Browser Extension</span>
+            </div>
+          </h3>
+            <p>Automatically catch accessibility issues with the click of a button. Start a free trial to export, save and share those issues with the rest of your team.</p>
+          </div>
+          <div class="sect-cta"><a href="#" class="ctrl">Start Free Trial</a></div>
+        </div>
+        <div class="card">
+          <div class="card-img">
+            <img src="/assets/images/gaad.jpg" alt="" loading="lazy">
+          </div>
+          <div class="card-txt">
+            <h3>
+              <div role="text" class="title">
+                <span class="badge">Event </span>
+                <span>Global Accessibility Awareness Day (GAAD)</span>
+              </div>
+            </h3>
+            <p>GAAD is a great way to learn about accessibility. Join Deque's free, virtual events to celebrate this accessibility holiday!</p>
+          </div>
+          <div class="sect-cta"><a href="#" class="ctrl">Learn More About GAAD</a></div>
+        </div>
+        <div class="card">
+          <div class="card-img">
+            <img src="/assets/images/gartner-thumbnail.png" alt="" loading="lazy">
+          </div>
+          <div class="card-txt">
+            <h3>
+              <div role="text" class="title">
+                <span class="badge">Report </span>
+                <span>Market Guide for Accessibility</span>
+              </div>
+            </h3>
+            <p>Learn how AI is shaping the future of digital accessibility. Deque Systems is named a Representative Vendor.</p>
+          </div>
+          <div class="sect-cta"><a href="#" class="ctrl">Read the Market Guide</a></div>
+        </div>
+        <div class="card">
+          <div class="card-img">
+            <img src="/assets/images/linter.png" alt="" loading="lazy">
+          </div>
+          <div class="card-txt">
+            <h3>
+              <div role="text" class="title">
+                <span class="badge">News </span>
+                <span>Deque Adds Linter to axe DevTools</span>
+              </div>
+            </h3>
+            <p>Dev teams can leverage a new linter service that makes automated accessibility testing even easier.</p>
+          </div>
+          <div class="sect-cta"><a href="#" class="ctrl">Read About Deque’s Linter</a></div>
+        </div>
+        <div class="card">
+          <div class="card-img">
+            <img src="/assets/images/infographic.png" alt="" loading="lazy">
+          </div>
+          <div class="card-txt">
+            <h3>
+              <div role="text" class="title">
+                <span class="badge">Infographic </span>
+                <span>Essential Guide to Digital Accessibility</span>
+              </div>
+            </h3>
+            <p>Understand the basics of web accessibility with this handy collection of stats and definitions.</p>
+          </div>
+          <div class="sect-cta"><a href="#" class="ctrl">Download Infographic</a></div>
+        </div>
       </div>
     </div>
     <div class="sub-sect10" data-white-focus>
@@ -537,8 +643,8 @@
     <a href="#info" data-skip>Skip to Company Info</a>
     <div class="footer-content" data-dark-blue-bg data-white-focus>
       <nav aria-label="Secondary">
-        <ul class="sec-nav-list">
-          <li>
+        <ul class="sec-nav-list wrapper">
+          <li class="top-item">
             <h2><a href="#">Company</a></h2>
             <ul class="sec-subnav-list">
               <li><a href="#">Our Team</a></li>
@@ -548,7 +654,7 @@
               <li><a href="#">Contact</a></li>
             </ul>
           </li>
-          <li>
+          <li class="top-item">
             <h2><a href="#">axe Tools</a></h2>
             <ul class="sec-subnav-list">
               <li><a href="#">axe DevTools</a></li>
@@ -559,7 +665,7 @@
               <li><a href="#">Free Browser Extensions</a></li>
             </ul>
           </li>
-          <li>
+          <li class="top-item">
             <h2><a href="#">Solutions</a></h2>
             <ul class="sec-subnav-list">
               <li><a href="#">Audits and Compliance Testing</a></li>
@@ -570,7 +676,7 @@
               <li><a href="#">Training</a></li>
             </ul>
           </li>
-          <li>
+          <li class="top-item">
             <h2><a href="#">News & Resources</a></h2>
             <ul class="sec-subnav-list">
               <li><a href="#">Blog</a></li>
@@ -580,7 +686,7 @@
               <li><a href="#">Shift Left</a></li>
             </ul>
           </li>
-          <li>
+          <li class="top-item">
             <h2><a href="#">Compliance</a></h2>
             <ul class="sec-subnav-list">
               <li><a href="#">ADA</a></li>
@@ -591,7 +697,7 @@
               <li><a href="#">EN 301 549</a></li>
             </ul>
           </li>
-          <li>
+          <li class="top-item">
             <h2><a href="#">Industries</a></h2>
             <ul class="sec-subnav-list">
               <li><a href="#">Finance & Banking</a></li>
@@ -626,7 +732,7 @@
               <a href="tel:+17032250380">1-703-225-0380</a></span>
           </address>
           <nav aria-label="Site-wide">
-            <ul>
+            <ul class="site-map">
               <li><a href="#">Legal</a></li>
               <li><a href="#">Sitemap</a></li>
               <li><a href="#">Docs</a></li>
@@ -635,41 +741,43 @@
             </ul>
           </nav>
         </div>
-        <div class="socials">
-          <div><small>&copy; 2023, Deque Systems, Inc. All Rights Reserved</small></div>
-          <ul class="icons">
-            <li>
-              <a href="#" target="_blank">
-                <svg role="img" focusable="false" viewBox="0 0 48 48">
-                  <title>Deque on LinkedIn</title>
-                  <circle class="bg" cx="24" cy="24" r="24"/>
-                  <path class="symbol" d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z"/>
-                  <path class="symbol" d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z"/>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank">
-                <svg role="img" focusable="false" viewBox="0 0 48 48">
-                  <title>Deque on Twitter</title>
-                  <circle class="bg" cx="24" cy="24" r="24"/>
-                  <path class="symbol" d="M36 16.3086C35.1177 16.7006 34.1681 16.9646 33.1722 17.0838C34.1889 16.4742 34.9697 15.5095 35.3368 14.36C34.3865 14.9247 33.3314 15.3335 32.2107 15.5551C31.3123 14.5984 30.0316 14 28.6165 14C25.8975 14 23.6928 16.2047 23.6928 18.9237C23.6928 19.3092 23.7368 19.6852 23.8208 20.046C19.7283 19.8412 16.1005 17.8805 13.6719 14.9015C13.2479 15.6287 13.0055 16.4742 13.0055 17.3766C13.0055 19.0845 13.8735 20.5916 15.1958 21.4747C14.3878 21.4491 13.6295 21.2275 12.9647 20.8587V20.9203C12.9647 23.3066 14.663 25.296 16.9141 25.7496C16.5013 25.8616 16.0661 25.9224 15.6174 25.9224C15.2998 25.9224 14.991 25.8912 14.6902 25.8336C15.3166 27.7895 17.1357 29.2134 19.2899 29.2534C17.6052 30.5733 15.4822 31.3612 13.1751 31.3612C12.7767 31.3612 12.3848 31.338 12 31.2916C14.1791 32.6884 16.7669 33.5043 19.5475 33.5043C28.6037 33.5043 33.5562 26.0016 33.5562 19.4956C33.5562 19.282 33.5522 19.0693 33.5418 18.8589C34.5049 18.1629 35.34 17.2958 36 16.3086Z"/>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank">
-                <svg role="img" focusable="false" viewBox="0 0 1024 1024">
-                  <title>Deque on GitHub</title>
-                  <circle class="bg" cx="512" cy="512" r="512"/>
-                  <path class="symbol" d="M511.9 262.2c-141.5 0-256.1 114.7-256.1 256.1 0 113.2 73.4 209.2 175.1 243 12.8 2.4 17.5-5.5 17.5-12.3 0-6.1-.2-22.2-.3-43.5-71.2 15.5-86.3-34.4-86.3-34.4-11.7-29.6-28.5-37.5-28.5-37.5-23.2-15.9 1.8-15.6 1.8-15.6 25.7 1.8 39.2 26.4 39.2 26.4 22.8 39.2 60 27.9 74.6 21.3 2.3-16.6 8.9-27.9 16.2-34.3-56.9-6.4-116.7-28.4-116.7-126.6 0-28 9.9-50.8 26.4-68.7-2.9-6.5-11.5-32.5 2.2-67.8 0 0 21.5-6.9 70.4 26.3 20.5-5.7 42.3-8.5 64-8.6 21.8.1 43.5 2.9 64 8.6 48.7-33.1 70.1-26.3 70.1-26.3 13.8 35.3 5.1 61.3 2.6 67.8 16.3 17.9 26.3 40.8 26.3 68.7 0 98.4-59.9 120.1-116.9 126.4 9 7.7 17.3 23.4 17.3 47.4 0 34.3-.3 61.8-.3 70.1 0 6.7 4.5 14.7 17.6 12.2C694.7 727.4 768 631.4 768 518.3c0-141.4-114.7-256.1-256.1-256.1"/>
-                </svg>
-              </a>
-            </li>
-          </ul>
+        <div class="footnotes">
+          <div class="socials">
+            <div><small>&copy; 2023, Deque Systems, Inc. All Rights Reserved</small></div>
+            <ul class="icons">
+              <li>
+                <a href="#" target="_blank">
+                  <svg role="img" focusable="false" viewBox="0 0 48 48">
+                    <title>Deque on LinkedIn</title>
+                    <circle class="bg" cx="24" cy="24" r="24"/>
+                    <path class="symbol" d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z"/>
+                    <path class="symbol" d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <svg role="img" focusable="false" viewBox="0 0 48 48">
+                    <title>Deque on Twitter</title>
+                    <circle class="bg" cx="24" cy="24" r="24"/>
+                    <path class="symbol" d="M36 16.3086C35.1177 16.7006 34.1681 16.9646 33.1722 17.0838C34.1889 16.4742 34.9697 15.5095 35.3368 14.36C34.3865 14.9247 33.3314 15.3335 32.2107 15.5551C31.3123 14.5984 30.0316 14 28.6165 14C25.8975 14 23.6928 16.2047 23.6928 18.9237C23.6928 19.3092 23.7368 19.6852 23.8208 20.046C19.7283 19.8412 16.1005 17.8805 13.6719 14.9015C13.2479 15.6287 13.0055 16.4742 13.0055 17.3766C13.0055 19.0845 13.8735 20.5916 15.1958 21.4747C14.3878 21.4491 13.6295 21.2275 12.9647 20.8587V20.9203C12.9647 23.3066 14.663 25.296 16.9141 25.7496C16.5013 25.8616 16.0661 25.9224 15.6174 25.9224C15.2998 25.9224 14.991 25.8912 14.6902 25.8336C15.3166 27.7895 17.1357 29.2134 19.2899 29.2534C17.6052 30.5733 15.4822 31.3612 13.1751 31.3612C12.7767 31.3612 12.3848 31.338 12 31.2916C14.1791 32.6884 16.7669 33.5043 19.5475 33.5043C28.6037 33.5043 33.5562 26.0016 33.5562 19.4956C33.5562 19.282 33.5522 19.0693 33.5418 18.8589C34.5049 18.1629 35.34 17.2958 36 16.3086Z"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <svg role="img" focusable="false" viewBox="0 0 1024 1024">
+                    <title>Deque on GitHub</title>
+                    <circle class="bg" cx="512" cy="512" r="512"/>
+                    <path class="symbol" d="M511.9 262.2c-141.5 0-256.1 114.7-256.1 256.1 0 113.2 73.4 209.2 175.1 243 12.8 2.4 17.5-5.5 17.5-12.3 0-6.1-.2-22.2-.3-43.5-71.2 15.5-86.3-34.4-86.3-34.4-11.7-29.6-28.5-37.5-28.5-37.5-23.2-15.9 1.8-15.6 1.8-15.6 25.7 1.8 39.2 26.4 39.2 26.4 22.8 39.2 60 27.9 74.6 21.3 2.3-16.6 8.9-27.9 16.2-34.3-56.9-6.4-116.7-28.4-116.7-126.6 0-28 9.9-50.8 26.4-68.7-2.9-6.5-11.5-32.5 2.2-67.8 0 0 21.5-6.9 70.4 26.3 20.5-5.7 42.3-8.5 64-8.6 21.8.1 43.5 2.9 64 8.6 48.7-33.1 70.1-26.3 70.1-26.3 13.8 35.3 5.1 61.3 2.6 67.8 16.3 17.9 26.3 40.8 26.3 68.7 0 98.4-59.9 120.1-116.9 126.4 9 7.7 17.3 23.4 17.3 47.4 0 34.3-.3 61.8-.3 70.1 0 6.7 4.5 14.7 17.6 12.2C694.7 727.4 768 631.4 768 518.3c0-141.4-114.7-256.1-256.1-256.1"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <p>Modern implementation by <strong>Praise Agbabiaka</strong></p>
         </div>
       </div>
-      <p style="text-align: center;">Modern implementation by <strong>Praise Agbabiaka</strong></p>
     </div>
   </footer>
 </body>
