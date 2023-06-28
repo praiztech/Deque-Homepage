@@ -17,6 +17,7 @@ primaryNav.firstElementChild.addEventListener('click', (evt) => {
 
 primaryNav.lastElementChild.querySelectorAll(':scope .top-item').forEach((topNavItem) => {
   topNavItem.firstElementChild.addEventListener('pointerdown', (evt) => {
+    evt.preventDefault();
     evt.currentTarget.setPointerCapture(evt.pointerId);
   });
   topNavItem.firstElementChild.addEventListener('pointerup', (evt) => {
@@ -24,6 +25,7 @@ primaryNav.lastElementChild.querySelectorAll(':scope .top-item').forEach((topNav
     const activatedSubNavBtn = primaryNav.lastElementChild.querySelector('.main-subnav-btn[aria-expanded="true"]');
     if (!(activatedSubNavBtn === null || activatedSubNavBtn === target)) toggleContent(activatedSubNavBtn);
     toggleContent(target, target.getAttribute('aria-expanded') === 'true');
+    target.focus();
   });
   topNavItem.addEventListener('focusout', (evt) => {
     const target = evt.currentTarget;
