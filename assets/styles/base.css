@@ -351,7 +351,7 @@ header {
   text-decoration: none;
 }
 
-.top-links a:hover, .top-links a:focus {
+.top-links a:focus {
   text-decoration: underline;
 }
 
