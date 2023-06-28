@@ -69,6 +69,7 @@
 }
 
 .main-subnav-btn {
+  display: block;
   padding: var(--base-spacing);
   font-weight: 600;
   font-size: calc(var(--base-font-size) * 1.1111);
@@ -169,7 +170,7 @@
   object-fit: cover;
 }
 
-.accordion {
+.accordion-container {
   flex-basis: 48%;
   margin: 0 1% 2%;
 }

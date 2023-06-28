@@ -378,7 +378,7 @@ header {
   --rotation-angle: -90deg;
 }
 
-.main-subnav-btn svg.open use {
+.main-subnav-btn svg.rotate use {
   --rotation-angle: 0;
 }
 
@@ -675,9 +675,12 @@ main a.ctrl {
   font-size: var(--base-font-size);
 }
 
-.accordion {
+.accordion-container {
   flex-basis: 100%;
-  margin-bottom: calc(var(--base-spacing) * 1.6);
+  margin: 0 0 calc(var(--base-spacing) * 1.6);
+}
+
+.accordion {
   border-radius: 0.6rem;
   border: 0.3rem solid transparent;
   background-color: var(--blue-gray);
