@@ -164,6 +164,7 @@ nav a {
 /* HEADER */
 header {
   color: var(--off-white);
+  position: relative; /* allows positioning of skip link */
 }
 
 .banner {
@@ -228,6 +229,7 @@ header {
 }
 
 .search-widget form {
+  width: 100%;
   border: 0.1rem solid var(--gray);
   border-radius: 0.2rem;
   display: flex;
