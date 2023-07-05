@@ -153,25 +153,18 @@ nav a {
   text-align: center;
   font-weight: 600;
   line-height: 1;
+  transform: translate(-100%, 0);
   transition: transform 0.4s ease-in-out;
 }
 
-header [data-skip] {
-  transform: translateY(-100%);
-}
-
-footer [data-skip] {
-  transform: translateX(-100%);
-}
-
-header [data-skip]:focus, footer [data-skip]:focus {
+[data-skip]:focus {
   transform: translate(0, 0);
 }
 
 /* HEADER */
 header {
   color: var(--off-white);
-  position: relative;
+  position: relative; /* allows absolute positioning of skip link */
 }
 
 .banner {
@@ -1019,7 +1012,7 @@ main a.ctrl {
 
 /* FOOTER */
 footer {
-  position: relative; /* allows positioning of footer skip links */
+  position: relative; /* allows absolute positioning of skip links */
 }
 
 .footer-content {
