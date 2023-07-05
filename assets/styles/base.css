@@ -164,7 +164,6 @@ nav a {
 /* HEADER */
 header {
   color: var(--off-white);
-  position: relative; /* allows absolute positioning of skip link */
 }
 
 .banner {
@@ -1012,7 +1011,7 @@ main a.ctrl {
 
 /* FOOTER */
 footer {
-  position: relative; /* allows absolute positioning of skip links */
+  position: relative; /* allows positioning of footer skip links */
 }
 
 .footer-content {
