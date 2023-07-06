@@ -164,7 +164,6 @@ nav a {
 /* HEADER */
 header {
   color: var(--off-white);
-  position: relative; /* allows positioning of skip link */
 }
 
 .banner {
