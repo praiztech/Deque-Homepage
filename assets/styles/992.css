@@ -1,9 +1,5 @@
 /* HEADER */
 /* Primary Navigation */
-.main-nav-list {
-  justify-content: space-evenly;
-}
-
 .main-subnav-btn {
   padding: calc(var(--base-spacing) * 1.5);
 }
@@ -82,6 +78,10 @@
 .card.large .sect-cta {
   padding-left: calc(var(--base-spacing) * 5);
   justify-content: flex-start;
+}
+
+.accordion button {
+  height: 12rem;
 }
 
 .testimonial-intro, [aria-label="Testimonial"], .collab-intro, .collab-img {

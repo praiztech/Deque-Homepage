@@ -16,6 +16,7 @@ primaryNav.firstElementChild.addEventListener('click', (evt) => {
 });
 
 primaryNav.lastElementChild.querySelectorAll(':scope .top-item').forEach((topNavItem) => {
+  // unable to use click evt coz main-subnav-btn may move b4 click evt registers
   topNavItem.firstElementChild.addEventListener('pointerdown', (evt) => {
     evt.preventDefault();
     evt.currentTarget.setPointerCapture(evt.pointerId);
@@ -75,15 +76,6 @@ document.addEventListener('keydown', (evt) => {
         toggleContent(target, target.getAttribute('aria-expanded') === 'true');
       }
       break;
-  }
-});
-
-document.addEventListener('scroll', () => {
-  if (!window.matchMedia('(min-width: 48em)').matches) return;
-  if (primaryNav.getBoundingClientRect().top === 0 && !primaryNav.classList.contains('sticky')) {
-    primaryNav.classList.add('sticky');
-  } else if (primaryNav.getBoundingClientRect().top > 0 && primaryNav.classList.contains('sticky')) {
-    primaryNav.classList.remove('sticky');
   }
 });
 
