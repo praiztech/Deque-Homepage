@@ -745,18 +745,15 @@ main a.ctrl {
   padding-top: 0;
 }
 
-.testimonial-intro, [aria-label="Testimonial"] {
+.testimonial-intro, .testimonial-quote-container {
   flex-basis: 100%;
 }
 
-[aria-label="Testimonial"] {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: calc(var(--base-spacing) * 1.5);
+.testimonial-quote-container p {
+  margin-bottom: 0;
 }
 
-[aria-label="Testimonial"] .quote-container {
-  grid-column: 1 / -1;
+.quote {
   margin-bottom: calc(var(--base-spacing) * 2);
   border-radius: 2.5rem;
   border: 0.5rem solid var(--off-white);
@@ -764,14 +761,14 @@ main a.ctrl {
   position: relative;
 }
 
-[aria-label="Testimonial"] .quote-container::before, [aria-label="Testimonial"] .quote-container::after {
+.quote::before, .quote::after {
   content: "";
   position: absolute;
   height: 2.5rem;
   clip-path: polygon(0 0, 0 100%, 100% 0);
 }
 
-[aria-label="Testimonial"] .quote-container::before {
+.quote::before {
   left: 7rem;
   bottom: -2.8rem;
   width: 4rem;
@@ -779,7 +776,7 @@ main a.ctrl {
   z-index: 2;
 }
 
-[aria-label="Testimonial"] .quote-container::after {
+.quote::after {
   left: 7.5rem;
   bottom: -2rem;
   width: 3rem;
@@ -787,43 +784,43 @@ main a.ctrl {
   z-index: 3;
 }
 
-[aria-label="Testimonial"] blockquote::before, [aria-label="Testimonial"] blockquote::after {
+.quote p::before, .quote p::after {
   position: absolute;
   font-size: calc(var(--base-font-size) * 2.5);
   line-height: 1;
 }
 
-[aria-label="Testimonial"] blockquote::before {
+.quote p::before {
   content: '“';
   top: var(--base-spacing);
   left: var(--base-spacing);
 }
 
-[aria-label="Testimonial"] blockquote::after {
+.quote p::after {
   content: '”';
   right: var(--base-spacing);
   bottom: calc(var(--base-spacing) * 0.5);
 }
 
-[aria-label="Testimonial"] p {
-  margin-bottom: 0;
+.quote p {
   font-size: calc(var(--base-font-size) * 1.1);
 }
 
-.testimonial-img {
+.citation {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--base-spacing) * 1.5);
+}
+
+.citation img {
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
-}
-
-.testimonial-img img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
-[aria-label="Testimonial"] figcaption {
-  align-self: center;
+.citation cite {
+  font-style: normal;
 }
 
 .customer {
