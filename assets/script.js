@@ -1,6 +1,7 @@
 const primaryNav = document.getElementById('primary-nav');
 const mainNavList = document.getElementById('main-nav-list');
 
+// with css, ensures search label becomes visually hidden when user types a query
 document.getElementById('search-input').addEventListener('input', (evt) => {
   const searchInput = evt.target;
   searchInput.setAttribute('value', searchInput.value);
@@ -23,6 +24,7 @@ mainNavList.querySelectorAll(':scope .top-item').forEach((topNavItem) => {
     evt.preventDefault();
     evt.currentTarget.setPointerCapture(evt.pointerId);
   });
+  // used pointerup to execute evt handling to meet WCAG 2.5.2 Pointer Cancellation
   subNavBtn.addEventListener('pointerup', (evt) => {
     const target = evt.currentTarget;
     const activatedSubNavBtn = mainNavList.querySelector('.main-subnav-btn[aria-expanded="true"]');
@@ -51,6 +53,7 @@ document.querySelectorAll('.accordion button').forEach((accordionBtn) => {
   });
 });
 
+// ensures accordion panel is hidden from all users after it closes
 document.querySelectorAll('.accordion [id^="panel"]').forEach((accordionPanel) => {
   accordionPanel.addEventListener('animationend', (evt) => {
     if (evt.animationName === 'hide') evt.target.setAttribute('hidden', 'hidden');
@@ -71,7 +74,7 @@ document.addEventListener('keydown', (evt) => {
         activatedNavBtn.focus();
       }
       break;
-    case ' ':
+    case ' ': // necessary coz click evt cant be used
     case 'Enter':
       const target = evt.target;
       if (target.classList.contains('main-subnav-btn')) {
@@ -82,15 +85,21 @@ document.addEventListener('keydown', (evt) => {
 });
 
 function toggleContent(btn, hideContent = true, contentType = 'nav') {
-  const content = document.getElementById(`${btn.getAttribute('aria-controls')}`);
   btn.setAttribute('aria-expanded', hideContent ? 'false' : 'true');
+
+  /*
+   * corresponding nav list does not always immediately follow btn but aria-controls
+   * always points to the right nav list
+   */
+  const content = document.getElementById(`${btn.getAttribute('aria-controls')}`);
   switch (contentType) {
     case 'accordion':
       if (hideContent) {
         content.classList.remove('show');
         content.classList.add('hide');
+        // animationend evt handler sets hidden attribute
       } else {
-        content.removeAttribute('hidden');
+        content.removeAttribute('hidden'); // makes content available to all users
         content.classList.remove('hide');
         document.documentElement.style.setProperty('--accordion-content-height', content.scrollHeight + 'px');
         content.classList.add('show');
@@ -101,7 +110,7 @@ function toggleContent(btn, hideContent = true, contentType = 'nav') {
         case true:
           hideContent ? content.removeAttribute('data-visible') : content.setAttribute('data-visible', 'true');
           break;
-        case false:
+        case false: // main subnav btn
           if (hideContent) {
             (
               window.matchMedia('(min-width: 48em)').matches ?

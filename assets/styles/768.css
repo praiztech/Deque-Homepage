@@ -79,7 +79,7 @@
   pointer-events: none;
 }
 
-/* .hidden-sublist ensures that the hover/focus indicator is removed when a subnavigation list opens */
+/* .hidden-sublist removes that the hover/focus indicator when a user opens subnavigation list */
 .main-subnav-btn.hidden-sublist:hover::after, .main-subnav-btn.hidden-sublist:focus::after {
   border-bottom: 0.4rem solid currentColor;
 }
