@@ -819,10 +819,6 @@ main a.ctrl {
   object-fit: cover;
 }
 
-.citation cite {
-  font-style: normal;
-}
-
 .customer {
   --customer-logo-width: 18rem;
 }
