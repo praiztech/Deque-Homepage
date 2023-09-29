@@ -1,7 +1,7 @@
 const primaryNav = document.getElementById('primary-nav');
 const mainNavList = document.getElementById('main-nav-list');
 
-// with css, ensures search label becomes visually hidden when user types a query
+// with css, ensures search label is visually hidden when user types a query
 document.getElementById('search-input').addEventListener('input', (evt) => {
   const searchInput = evt.target;
   searchInput.setAttribute('value', searchInput.value);
@@ -19,7 +19,11 @@ primaryNav.querySelector('.hamburger-btn').addEventListener('click', (evt) => {
 
 mainNavList.querySelectorAll(':scope .top-item').forEach((topNavItem) => {
   const subNavBtn = topNavItem.querySelector('.main-subnav-btn');
-  // unable to use click evt coz main-subnav-btn may move b4 click registers
+  /*
+   * unable to use click evt coz focusout evt on related target 
+   * may cause related target to close, moving current target b4 click registers
+   * and focusout evt handling is reqd to account for focus change from keyboard tabbing
+   */
   subNavBtn.addEventListener('pointerdown', (evt) => {
     evt.preventDefault();
     evt.currentTarget.setPointerCapture(evt.pointerId);
